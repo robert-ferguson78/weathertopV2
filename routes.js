@@ -10,3 +10,4 @@ router.get("/dashboard", dashboardController.index);
 router.post("/dashboard/addstation", dashboardController.addStation);
 router.get("/about", aboutController.index);
 router.get("/station/:id", stationController.index);
+router.post("/station/:id/addreading", stationController.addReading);
