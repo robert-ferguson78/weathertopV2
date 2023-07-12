@@ -1,17 +1,68 @@
-<!DOCTYPE html>
 <html lang="en-IE">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{title}}</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-
-<body>
-  <div class="container">
-    {{{body}}}
-  </div>
-</body>
-
+  <!--header start-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/0a68ab4985.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/public/stylesheets/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <!--header end-->
+  <body class="container hero is-fullheight">
+    <!--Banner start-->
+    <section class="hero is-small dark-green">
+      <div class="hero-body columns is-vcentered block">
+        <div class="column is-two-fifths-desktop is-full-mobile mb-1">
+          <p class="title">
+            Welcome to the Weather Station App
+          </p>
+          <p class="subtitle">
+            Add your Weather Station
+          </p>
+        </div>
+        <div class="column is-full-mobile">
+          <div class="columns is-mobile">
+            <div class="column is-2">
+              <img src="../images/svg/overcast-day-snow.svg" />
+            </div>
+            <div class="column is-2">
+              <img src="../images/svg/rain.svg" />
+            </div>
+            <div class="column is-2">
+              <img src="../images/svg/wind-beaufort-2.svg" />
+            </div>
+            <div class="column is-2">
+              <img src="../images/svg/clear-day.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Banner end-->
+    <!--Content start-->
+    <main>
+      {{{body}}}
+    </main>
+    <!--Content end-->
+    <!--Footer start-->
+    <footer class="footer pt-1 pb-1 has-background-white is-flex-align-items-flex-end mt-auto">
+      <div class="columns">
+        <div class="column">
+          <img src="../images/city-scape-weather-icons.png" />
+          <div class="columns">
+            <div class="column dark-green box">
+              <div class="content has-text-centered">
+                <p class="has-text-white">
+                  Copyright Weather Station Demo 2023
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--Footer end-->
+  </body>
 </html>

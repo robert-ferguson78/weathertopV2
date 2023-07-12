@@ -32,6 +32,14 @@
       "pressure": 211,
       "_id": "e94a2f0c-5b72-4ae8-bb5d-4fbea8064807",
       "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "code": 200,
+      "temperature": 11,
+      "windSpeed": 22,
+      "pressure": 33,
+      "_id": "a317948e-a395-46f9-b10e-9a971a800444",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
     }
   ]
 }
