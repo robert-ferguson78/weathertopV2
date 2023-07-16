@@ -64,7 +64,8 @@ main {
     background-color: #CEF09D;
 }
 
-.dark-green {
+body .dark-green,
+footer .dark-green {
     background-color: #083643;
     color: #ffffff;
     width: 100%;
