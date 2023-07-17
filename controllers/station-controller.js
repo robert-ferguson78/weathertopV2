@@ -1,5 +1,6 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
+import { latestReadings } from '../utils/analytics.js';
 
 export const stationController = {
   async index(request, response) {
@@ -7,6 +8,7 @@ export const stationController = {
     const viewData = {
       title: "Station",
       station: station,
+      latestTemp: latestReadings.getLatestReadingTemp(station),
     };
     response.render("station-view", viewData);
   },
@@ -22,4 +24,5 @@ export const stationController = {
     await readingStore.addReading(station._id, newReading);
     response.redirect("/station/" + station._id);
   },
+
 };
