@@ -1,15 +1,37 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
-import { latestReadings } from '../utils/analytics.js';
+//import { latestReadings } from '../utils/analytics.js';
 
 export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
+    let stationReadings = await readingStore.getReadingsBystationId(request.params.id);
+    let lastReading = null;
+    let lastCode = null;
+    let lastTemp = null;
+    let lastWindSpeed = null;
+    let lastPressure = null;
+    if(stationReadings.length > 0) {
+      lastReading = stationReadings.length - 1;
+      lastCode = stationReadings[lastReading].code;
+      lastTemp = stationReadings[lastReading].temperature;
+      lastWindSpeed = stationReadings[lastReading].windSpeed;
+      lastPressure = stationReadings[lastReading].pressure;
+    } else {
+      lastCode = "No Code";
+      lastTemp = "No Temp";
+      lastWindSpeed = "No WindSpeed";
+      lastPressure = "No Pressure";
+    }
     const viewData = {
       title: "Station",
       station: station,
-      latestTemp: latestReadings.getLatestReadingTemp(station),
+      latestCode: lastCode,
+      latestTemp: lastTemp,
+      latestWindSpeed: lastWindSpeed,
+      latestPressure: lastPressure,
     };
+    console.log(`${viewData.latestTemp}`);
     response.render("station-view", viewData);
   },
   async addReading(request, response) {
