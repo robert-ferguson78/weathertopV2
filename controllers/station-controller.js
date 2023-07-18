@@ -7,21 +7,16 @@ export const stationController = {
     const station = await stationStore.getStationById(request.params.id);
     let stationReadings = await readingStore.getReadingsBystationId(request.params.id);
     let lastReading = null;
-    let lastCode = null;
-    let lastTemp = null;
-    let lastWindSpeed = null;
-    let lastPressure = null;
+    let lastCode = "No Code";
+    let lastTemp = "No Temp";
+    let lastWindSpeed = "No WindSpeed";
+    let lastPressure = "No Pressure";
     if(stationReadings.length > 0) {
       lastReading = stationReadings.length - 1;
       lastCode = stationReadings[lastReading].code;
       lastTemp = stationReadings[lastReading].temperature;
       lastWindSpeed = stationReadings[lastReading].windSpeed;
       lastPressure = stationReadings[lastReading].pressure;
-    } else {
-      lastCode = "No Code";
-      lastTemp = "No Temp";
-      lastWindSpeed = "No WindSpeed";
-      lastPressure = "No Pressure";
     }
     const viewData = {
       title: "Station",
