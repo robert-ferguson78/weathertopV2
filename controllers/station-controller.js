@@ -6,6 +6,7 @@ export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     let stationReadings = await readingStore.getReadingsBystationId(request.params.id);
+    let displayReadings = false;
     let lastReading = null;
     let lastCode = "No Code";
     let lastTemp = "No Temp";
@@ -17,6 +18,7 @@ export const stationController = {
       lastTemp = stationReadings[lastReading].temperature;
       lastWindSpeed = stationReadings[lastReading].windSpeed;
       lastPressure = stationReadings[lastReading].pressure;
+      displayReadings = true;
     }
     const viewData = {
       title: "Station",
@@ -25,6 +27,7 @@ export const stationController = {
       latestTemp: lastTemp,
       latestWindSpeed: lastWindSpeed,
       latestPressure: lastPressure,
+      displayReading: displayReadings,
     };
     console.log(`${viewData.latestTemp}`);
     response.render("station-view", viewData);
