@@ -7,14 +7,10 @@ export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
     let stationReadings = await lastReadings(request.params.id);
-    let displayReadings = false;
-    if(stationReadings.lastReading !== null) {
-      displayReadings = true;
-    }
     const viewData = {
       title: "Station",
       station: station,
-      displayReading: displayReadings,
+      // displayReading: displayReadings,
     };
     Object.assign(viewData, stationReadings.reading)
     console.log(`${JSON.stringify(viewData)}`);

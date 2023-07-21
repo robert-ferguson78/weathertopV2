@@ -4,6 +4,7 @@ import { conversions } from "./conversion.js";
 export const lastReadings = async (id) => {
   let stationReadings = await readingStore.getReadingsBystationId(id);
   let lastReading = null;
+  let displayReadings = false;
   const reading = {
     latestCode: "No Code",
     latestTempC: "No Temp",
@@ -22,6 +23,7 @@ export const lastReadings = async (id) => {
     reading.latestWindSpeedIcon = conversions.windSpeedIcon(reading.latestWindSpeed);
     reading.latestPressure = stationReadings[lastReading].pressure;
     reading.latestTempF = conversions.celsiusToFahrenheit(reading.latestTempC);
+    reading.displayReadings = true;
   }
   return {
     lastReading: lastReading,
