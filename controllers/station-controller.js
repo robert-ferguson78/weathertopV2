@@ -1,35 +1,23 @@
 import { stationStore } from "../models/station-store.js";
 import { readingStore } from "../models/reading-store.js";
+import { lastReadings } from "../utils/analytics.js";
 //import { latestReadings } from '../utils/analytics.js';
 
 export const stationController = {
   async index(request, response) {
     const station = await stationStore.getStationById(request.params.id);
-    let stationReadings = await readingStore.getReadingsBystationId(request.params.id);
+    let stationReadings = await lastReadings(request.params.id);
     let displayReadings = false;
-    let lastReading = null;
-    let lastCode = "No Code";
-    let lastTemp = "No Temp";
-    let lastWindSpeed = "No WindSpeed";
-    let lastPressure = "No Pressure";
-    if(stationReadings.length > 0) {
-      lastReading = stationReadings.length - 1;
-      lastCode = stationReadings[lastReading].code;
-      lastTemp = stationReadings[lastReading].temperature;
-      lastWindSpeed = stationReadings[lastReading].windSpeed;
-      lastPressure = stationReadings[lastReading].pressure;
+    if(stationReadings.lastReading !== null) {
       displayReadings = true;
     }
     const viewData = {
       title: "Station",
       station: station,
-      latestCode: lastCode,
-      latestTemp: lastTemp,
-      latestWindSpeed: lastWindSpeed,
-      latestPressure: lastPressure,
       displayReading: displayReadings,
     };
-    console.log(`${viewData.latestTemp}`);
+    Object.assign(viewData, stationReadings.reading)
+    console.log(`${JSON.stringify(viewData)}`);
     response.render("station-view", viewData);
   },
   async addReading(request, response) {
