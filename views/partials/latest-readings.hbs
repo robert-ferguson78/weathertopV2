@@ -27,10 +27,11 @@
             <!--Readings Weather code start-->
             <div class="columns is-mobile">
                 <div class="column reading is-size-6-desktop is-half-mobile">
-                    {{latestCode}}
+                    {{latestCode}} <br/>
+                    {{latestWeatherDescription}}
                 </div>
                 <div class="column is-half-mobile">
-                    <img src="../images/svg/sun-hot.svg">
+                    <img src="../images/svg/{{latestWeatherIcon}}.svg">
                 </div>
             </div>
             <!--Readings Weather code start-->
@@ -68,10 +69,10 @@
             <div class="columns is-mobile">
                 <div class="column reading is-size-6-desktop is-half-mobile">
                     {{latestWindSpeed}} bft <br/>
-                    <span class="suppliment-text">Windspeed Text here</span>
+                    <span class="suppliment-text">{{latestWindSpeedDescription}}</span>
                 </div>
                 <div class="column is-half-mobile">
-                    <img src="../images/svg/wind-beaufort-1.svg">
+                    <img src="../images/svg/wind-{{latestWindSpeedIcon}}.svg">
                 </div>
             </div>
             <!--Readings Windspeed end-->

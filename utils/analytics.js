@@ -1,17 +1,6 @@
 import { readingStore } from "../models/reading-store.js";
 import { conversions } from "./conversion.js";
 
-// export const latestReadings = {
-//     getLatestReadingTemp() {
-//         let readings = [1,2,3,4,5];
-//         let latestReadingTemp = null;
-//         if (readings.length > 0) {
-//           latestReadingTemp = readings[readings.length - 1];
-//         }
-//         return latestReadingTemp;
-//       },
-//     };
-
 export const lastReadings = async (id) => {
   let stationReadings = await readingStore.getReadingsBystationId(id);
   let lastReading = null;
@@ -25,8 +14,12 @@ export const lastReadings = async (id) => {
   if(stationReadings.length > 0) {
     lastReading = stationReadings.length - 1;
     reading.latestCode = stationReadings[lastReading].code;
+    reading.latestWeatherDescription = conversions.weatherDescription(reading.latestCode);
+    reading.latestWeatherIcon = conversions.weatherIcon(reading.latestCode);
     reading.latestTempC = stationReadings[lastReading].temperature;
-    reading.latestWindSpeed = stationReadings[lastReading].windSpeed;
+    reading.latestWindSpeed = conversions.kmToBf(stationReadings[lastReading].windSpeed);
+    reading.latestWindSpeedDescription = conversions.windSpeedDescription(reading.latestWindSpeed);
+    reading.latestWindSpeedIcon = conversions.windSpeedIcon(reading.latestWindSpeed);
     reading.latestPressure = stationReadings[lastReading].pressure;
     reading.latestTempF = conversions.celsiusToFahrenheit(reading.latestTempC);
   }
