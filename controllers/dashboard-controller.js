@@ -19,9 +19,9 @@ export const dashboardController = {
 
   async addStation(request, response) {
     const newStation = {
-      title: request.body.title,
+      stationName: request.body.stationName,
     };
-    console.log(`adding station ${newStation.title}`);
+    console.log(`adding station ${newStation.stationName}`);
     await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
