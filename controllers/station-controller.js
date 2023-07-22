@@ -8,7 +8,7 @@ export const stationController = {
     const station = await stationStore.getStationById(request.params.id);
     let stationReadings = await lastReadings(request.params.id);
     const viewData = {
-      title: "Station",
+      title: station.stationName,
       station: station,
       // displayReading: displayReadings,
     };
