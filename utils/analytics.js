@@ -19,9 +19,13 @@ export const lastReadings = async (id) => {
     reading.latestWeatherDescription = conversions.weatherDescription(reading.latestCode);
     reading.latestWeatherIcon = conversions.weatherIcon(reading.latestCode);
     reading.latestTempC = stationReadings[lastReading].temperature;
+    reading.latestWindSpeedNumber = stationReadings[lastReading].windSpeed;
     reading.latestWindSpeed = conversions.kmToBf(stationReadings[lastReading].windSpeed);
     reading.latestWindSpeedDescription = conversions.windSpeedDescription(reading.latestWindSpeed);
     reading.latestWindSpeedIcon = conversions.windSpeedIcon(reading.latestWindSpeed);
+    reading.windDirection = stationReadings[lastReading].windDirection;
+    reading.windCompassReading = conversions.windCompassReading(reading.windDirection);
+    reading.windChill = conversions.calculateWindChill(reading.latestTempC, reading.latestWindSpeedNumber);
     reading.latestPressure = stationReadings[lastReading].pressure;
     reading.latestTempF = conversions.celsiusToFahrenheit(reading.latestTempC);
     reading.minWindSpeed = maxMin.minMaxReadings(stationReadings, "windSpeed", "min");

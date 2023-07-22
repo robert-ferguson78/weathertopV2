@@ -63,6 +63,24 @@
       "pressure": 123,
       "_id": "8d3ef129-f9d8-414c-85e0-64f6d437dc5e",
       "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "code": 100,
+      "temperature": 12.5,
+      "windDirection": 101.34,
+      "windSpeed": 12.8,
+      "pressure": 124,
+      "_id": "1be8f3bf-a697-4b35-bfb9-1e466e5d495f",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "code": 100,
+      "temperature": 12.4,
+      "windDirection": 123.6,
+      "windSpeed": 3.4,
+      "pressure": 11,
+      "_id": "20c5278d-46a4-4116-a9fd-c26b5329d207",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
     }
   ]
 }

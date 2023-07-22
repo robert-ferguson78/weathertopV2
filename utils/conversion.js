@@ -74,4 +74,52 @@ export const conversions = {
         return WindSpeed.get(code).icon;
       },
 
+      windCompassReading(degreeToConvert) {
+        let windDirectionText = "No Reading";
+        if ((degreeToConvert > 348.75 && degreeToConvert <= 360) || (degreeToConvert >= 0 && degreeToConvert <= 11.25)) {
+          windDirectionText = "North";
+        } else if (degreeToConvert > 11.25 && degreeToConvert <= 33.75) {
+          windDirectionText = "North North East";
+        } else if (degreeToConvert > 33.75 && degreeToConvert <= 56.25) {
+          windDirectionText = "North East";
+        } else if (degreeToConvert > 56.25 && degreeToConvert <= 78.75) {
+          windDirectionText = "East North East";
+        } else if (degreeToConvert > 78.75 && degreeToConvert <= 101.25) {
+          windDirectionText = "East";
+        } else if (degreeToConvert > 101.25 && degreeToConvert <= 123.75) {
+          windDirectionText = "East South East";
+        } else if (degreeToConvert > 123.75 && degreeToConvert <= 146.25) {
+          windDirectionText = "South East";
+        } else if (degreeToConvert > 146.25 && degreeToConvert <= 168.75) {
+          windDirectionText = "South South East";
+        } else if (degreeToConvert > 168.75 && degreeToConvert <= 191.25) {
+          windDirectionText = "South";
+        } else if (degreeToConvert > 191.25 && degreeToConvert <= 213.75) {
+          windDirectionText = "South South West";
+        } else if (degreeToConvert > 213.75 && degreeToConvert <= 236.25) {
+          windDirectionText = "South West";
+        } else if (degreeToConvert > 236.25 && degreeToConvert <= 258.75) {
+          windDirectionText = "West South West";
+        } else if (degreeToConvert > 258.75 && degreeToConvert <= 281.25) {
+          windDirectionText = "West";
+        } else if (degreeToConvert > 281.25 && degreeToConvert <= 303.75) {
+          windDirectionText = "West North West";
+        } else if (degreeToConvert > 303.75 && degreeToConvert <= 326.25) {
+          windDirectionText = "North West";
+        } else if (degreeToConvert > 326.25 && degreeToConvert <= 348.75) {
+          windDirectionText = "North North West";
+        } else {
+          windDirectionText = "Error";
+        }
+        return windDirectionText;
+      },
+
+      calculateWindChill(temperature, windSpeed) {
+        let windChill = 0;
+        windChill = 13.12 + (0.6215 * temperature) - 11.37 * (Math.pow(windSpeed, 0.16))
+            + (0.3965 * temperature) * (Math.pow(windSpeed, 0.16));
+            console.log(windChill);
+        return Math.round(windChill * 100.0) / 100.0;
+      },
+
 };
