@@ -1,8 +1,8 @@
 {{#each stations}}
-<div class="box box-link-hover-shadow">
-  <h2 class="title">
+<div class="content box">
+  <h1 class="title">
       {{stationName}}
-  </h2>
+  </h1>
   {{> latest-readings}}
   <a href="/station/{{_id}}" class="icon has-text-primary"><i class="fas fa-folder"></i></a>
 </div>

@@ -1,4 +1,4 @@
-<table class="table is-fullwidth">
+<table class="table mt-6">
   <thead>
     <tr>
       <th>Code</th>
@@ -11,19 +11,19 @@
   <tbody>
     {{#each station.readings}}
     <tr>
-      <td>
+      <td label="Code">
         {{code}}
       </td>
-      <td>
+      <td label="Temperature">
         {{temperature}}
       </td>
-      <td>
+      <td label="Wind Speed">
         {{windSpeed}}
       </td>
-      <td>
+      <td label="Wind Direction">
         {{windDirection}}
       </td>
-      <td>
+      <td label="Pressure">
         {{pressure}}
       </td>
     </tr>
