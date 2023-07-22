@@ -32,6 +32,8 @@ export const lastReadings = async (id) => {
     reading.maxWindSpeed = maxMin.minMaxReadings(stationReadings, "windSpeed", "max");
     reading.minPressure = maxMin.minMaxReadings(stationReadings, "pressure", "min");
     reading.maxPressure = maxMin.minMaxReadings(stationReadings, "pressure", "max");
+    reading.minTemp = maxMin.minMaxReadings(stationReadings, "temperature", "min");
+    reading.maxTemp = maxMin.minMaxReadings(stationReadings, "temperature", "max");
     reading.displayReadings = true;
   }
   return {

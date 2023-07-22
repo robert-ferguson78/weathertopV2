@@ -56,6 +56,12 @@
                     <img src="../images/svg/thermometer.svg">
                 </div>
             </div>
+            <div class="columns is-centered is-mobile">
+                <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
+                    Min: {{minTemp}} <i class="fa-regular fa-temperature-arrow-down"></i><br/>
+                    Max: {{maxTemp}} <i class="fa-regular fa-temperature-arrow-up"></i><br/>
+                </div>
+            </div>
             <!--Readings Temperature end-->
         </div>
     </div>
@@ -101,6 +107,12 @@
                 </div>
                 <div class="column is-half-mobile">
                     <img src="../images/svg/barometer.svg">
+                </div>
+            </div>
+            <div class="columns is-centered is-mobile">
+                <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
+                    Min: {{minPressure}} hpa <i class="fa-regular fa-gauge-simple-min"></i><br/>
+                    Max: {{maxPressure}} hpa <i class="fa-regular fa-gauge-max"></i><br/>
                 </div>
             </div>
             <!--Readings Pressure end-->
