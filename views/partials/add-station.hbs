@@ -1,7 +1,17 @@
-<form action="/dashboard/addstation" method="POST">
-  <div class="field">
-    <label class="label">Station Name</label>
-    <input class="input" type="text" placeholder="Enter station name" name="stationName">
-  </div>
-  <button class="button is-link">Add Station</button>
-</form>
+<div class="box has-background-light">
+  <form action="/dashboard/addstation" method="POST">
+    <div class="columns">
+       <div class="field column">
+        <label class="label">Add New Station</label>
+        <div class="control">
+          <input class="input" placeholder="Enter station name" type="text" name="stationName" required>
+        </div>
+      </div>
+      <div class="field column m-auto">
+        <div class="control">
+          <button class="button is-primary is-large">Create New Station</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
