@@ -9,6 +9,8 @@ export const stationController = {
     let stationReadings = await lastReadings(request.params.id);
     const viewData = {
       title: station.stationName,
+      latitude: station.latitude,
+      longitude: station.longitude,
       station: station,
       // displayReading: displayReadings,
     };
