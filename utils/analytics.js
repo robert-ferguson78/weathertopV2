@@ -1,5 +1,6 @@
 import { readingStore } from "../models/reading-store.js";
 import { conversions } from "./conversion.js";
+import { maxMin } from "./maxMin.js";
 
 export const lastReadings = async (id) => {
   let stationReadings = await readingStore.getReadingsBystationId(id);
@@ -23,6 +24,10 @@ export const lastReadings = async (id) => {
     reading.latestWindSpeedIcon = conversions.windSpeedIcon(reading.latestWindSpeed);
     reading.latestPressure = stationReadings[lastReading].pressure;
     reading.latestTempF = conversions.celsiusToFahrenheit(reading.latestTempC);
+    reading.minWindSpeed = maxMin.minMaxReadings(stationReadings, "windSpeed", "min");
+    reading.maxWindSpeed = maxMin.minMaxReadings(stationReadings, "windSpeed", "max");
+    reading.minPressure = maxMin.minMaxReadings(stationReadings, "pressure", "min");
+    reading.maxPressure = maxMin.minMaxReadings(stationReadings, "pressure", "max");
     reading.displayReadings = true;
   }
   return {

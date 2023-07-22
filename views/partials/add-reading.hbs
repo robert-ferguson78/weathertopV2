@@ -1,8 +1,8 @@
+<div class="box mt-6 has-background-light">
 <form class="box" action="/station/{{station._id}}/addreading" method="POST">
-  <label>Enter Reading Details:</label>
-  <div class="field is-horizontal">
-    <div class="field-body">
-      <div class="field">
+  <label class="label">Enter Reading Details:</label>
+  <div class="columns">
+      <div class="field column">
         <label class="label">Code</label>
                 <div class="control">
                     <div class="select">
@@ -19,26 +19,39 @@
                     </div>
                 </div>
       </div>
-      <div class="field">
+      <div class="field column">
         <label class="label">Temperature</label>
                 <div class="control">
                     <input class="input" placeholder="00.0 C" type="number" step=".01" name="temperature">
                 </div>
       </div>
-      <div class="field">
+      <div class="field column">
         <label class="label">Wind Speed</label>
                 <div class="control">
                     <input class="input" placeholder="00.00 kMh" type="number" step=".01" min="1" max="117"
                            name="windSpeed">
                 </div>
       </div>
-      <div class="field">
+      <div class="field column">
+                <label class="label">Wind Direction</label>
+                <div class="control">
+                    <input class="input" placeholder="00.00 dg" type="number" step=".01" min="0" max="360"
+                           name="windDirection">
+                </div>
+            </div>
+      <div class="field column">
         <label class="label">Pressure</label>
                 <div class="control">
                     <input class="input" placeholder="00.00hPa" type="number" name="pressure">
                 </div>
       </div>
-    </div>
-  </div>
-  <button class="button is-primary">Add Reading</button>
-</form>
+      <div class="field column m-auto">
+                <div class="control">
+                    <button class="button is-primary is-large">
+                        Submit Readings
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

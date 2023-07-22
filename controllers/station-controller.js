@@ -21,10 +21,11 @@ export const stationController = {
     const newReading = {
       code: Number(request.body.code),
       temperature: Number(request.body.temperature),
+      windDirection: Number(request.body.windDirection),
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
     };
-    console.log(`adding reading code:${newReading.code}, temperature:${newReading.temperature}, windSpeed:${newReading.windSpeed}, pressure:${newReading.pressure}`);
+    console.log(`adding reading code:${newReading.code}, temperature:${newReading.temperature}, windSpeed:${newReading.windSpeed}, windDirection:${newReading.windDirection}, pressure:${newReading.pressure}`);
     await readingStore.addReading(station._id, newReading);
     response.redirect("/station/" + station._id);
   },
