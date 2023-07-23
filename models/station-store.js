@@ -18,6 +18,11 @@ export const stationStore = {
     return station;
   },
 
+  async getStationsByUserId(userid) {
+    await db.read();
+    return db.data.stations.filter((station) => station.userid === userid);
+  },
+
   async getStationById(id) {
     await db.read();
     const list = db.data.stations.find((station) => station._id === id);
