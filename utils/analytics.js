@@ -1,9 +1,11 @@
 import { readingStore } from "../models/reading-store.js";
 import { conversions } from "./conversion.js";
 import { maxMin } from "./maxMin.js";
+import { trends } from "./trends.js";
 
 export const lastReadings = async (id) => {
   let stationReadings = await readingStore.getReadingsBystationId(id);
+  let array = stationReadings;
   let lastReading = null;
   let displayReadings = false;
   const reading = {
@@ -34,6 +36,9 @@ export const lastReadings = async (id) => {
     reading.maxPressure = maxMin.minMaxReadings(stationReadings, "pressure", "max");
     reading.minTemp = maxMin.minMaxReadings(stationReadings, "temperature", "min");
     reading.maxTemp = maxMin.minMaxReadings(stationReadings, "temperature", "max");
+    reading.trendWind = trends.trendDirection(array.map( reading => reading.windSpeed));
+    reading.trendTemp = trends.trendDirection(array.map( reading => reading.temperature));
+    reading.trendPressure = trends.trendDirection(array.map( reading => reading.pressure));
     reading.displayReadings = true;
   }
   return {

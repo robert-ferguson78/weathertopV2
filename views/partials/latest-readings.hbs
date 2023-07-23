@@ -60,6 +60,9 @@
                 <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
                     Min: {{minTemp}} <i class="fa-regular fa-temperature-arrow-down"></i><br/>
                     Max: {{maxTemp}} <i class="fa-regular fa-temperature-arrow-up"></i><br/>
+                    {{#if trendTemp}}
+                    Trend: <i class="fa-sharp fa-solid {{trendTemp}}"></i>
+                    {{/if}}
                 </div>
             </div>
             <!--Readings Temperature end-->
@@ -87,7 +90,10 @@
                     {{windCompassReading}} <i class="fa-solid fa-windsock"></i><br/>
                     Feels Like: {{windChill}} <i class="fa-sharp fa-regular fa-snow-blowing"></i><br/>
                     Min: {{minWindSpeed}} <i class="fa-solid fa-wind"></i><br/>
-                    Max: {{maxWindSpeed}} <i class="fa-sharp fa-solid fa-tornado"></i><br/>
+                    Max: {{trendWind}} <i class="fa-sharp fa-solid fa-tornado"></i><br/>
+                    {{#if trendTemp}}
+                    Trend: <i class="fa-sharp fa-solid {{trendWind}}"></i>
+                    {{/if}}
                 </div>
             </div>
             <!--Readings Windspeed end-->
@@ -113,6 +119,9 @@
                 <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
                     Min: {{minPressure}} hpa <i class="fa-regular fa-gauge-simple-min"></i><br/>
                     Max: {{maxPressure}} hpa <i class="fa-regular fa-gauge-max"></i><br/>
+                    {{#if trendPressure}}
+                    Trend: <i class="fa-sharp fa-solid {{trendPressure}}"></i>
+                    {{/if}}
                 </div>
             </div>
             <!--Readings Pressure end-->
