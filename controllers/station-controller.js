@@ -15,7 +15,7 @@ export const stationController = {
       // displayReading: displayReadings,
     };
     Object.assign(viewData, stationReadings.reading)
-    console.log(`${JSON.stringify(viewData)}`);
+    // console.log(`${JSON.stringify(viewData)}`);
     response.render("station-view", viewData);
   },
   async addReading(request, response) {
@@ -27,7 +27,7 @@ export const stationController = {
       windSpeed: Number(request.body.windSpeed),
       pressure: Number(request.body.pressure),
     };
-    console.log(`adding reading code:${newReading.code}, temperature:${newReading.temperature}, windSpeed:${newReading.windSpeed}, windDirection:${newReading.windDirection}, pressure:${newReading.pressure}`);
+    // console.log(`adding reading code:${newReading.code}, temperature:${newReading.temperature}, windSpeed:${newReading.windSpeed}, windDirection:${newReading.windDirection}, pressure:${newReading.pressure}`);
     await readingStore.addReading(station._id, newReading);
     response.redirect("/station/" + station._id);
   },
@@ -35,7 +35,7 @@ export const stationController = {
   async deleteReading(request, response) {
     const stationId = request.params.id;
     const readingId = request.params.readingid;
-    console.log(`Deleting Reading ${readingId} from Station ${stationId}`);
+    // console.log(`Deleting Reading ${readingId} from Station ${stationId}`);
     await readingStore.deleteReading(readingId);
     response.redirect("/station/" + stationId);
   }
