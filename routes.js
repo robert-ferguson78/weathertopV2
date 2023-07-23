@@ -16,6 +16,8 @@ router.post("/authenticate", accountsController.authenticate);
 router.get("/welcome", welcomeController.index);
 router.get("/dashboard", dashboardController.index);
 router.post("/dashboard/addstation", dashboardController.addStation);
+router.get("/dashboard/deletestation/:id", dashboardController.deleteStation);
 router.get("/about", aboutController.index);
 router.get("/station/:id", stationController.index);
 router.post("/station/:id/addreading", stationController.addReading);
+router.get("/station/:id/deletereading/:readingid", stationController.deleteReading);

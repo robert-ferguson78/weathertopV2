@@ -20,7 +20,7 @@ burgerIcon.addEventListener('click', () => {
 });
 
 function confirmdelete(element) {
-    let x = document.getElementById(`confirmDelete${element.dataset.location}`);
+    let x = document.getElementById(`confirmDelete/${element.dataset.location}`);
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {

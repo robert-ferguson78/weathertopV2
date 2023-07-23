@@ -32,4 +32,12 @@ export const stationController = {
     response.redirect("/station/" + station._id);
   },
 
+  async deleteReading(request, response) {
+    const stationId = request.params.id;
+    const readingId = request.params.readingid;
+    console.log(`Deleting Reading ${readingId} from Station ${stationId}`);
+    await readingStore.deleteReading(readingId);
+    response.redirect("/station/" + stationId);
+  }
+
 };

@@ -2,13 +2,6 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "stationName": "First station",
-      "latitude": "20.01",
-      "longitude": "-32.88",
-      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
-      "_id": "02d31fad-e314-4f4e-8ad6-397a33f14c1a"
-    },
-    {
       "stationName": "Second station",
       "latitude": "0.098",
       "longitude": "-2.98",
@@ -48,13 +41,6 @@
       "latitude": "55.006",
       "longitude": "-43.332",
       "_id": "db16909c-48df-4452-8cd8-4d040c9529f9"
-    },
-    {
-      "stationName": "Station Lat Long",
-      "latitude": "80.098",
-      "longitude": "-12.9788",
-      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
-      "_id": "55606f6a-c080-41db-8ce8-e6d6f6f3b1f1"
     },
     {
       "stationName": "Homer 1",
