@@ -14,6 +14,14 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "_id": "a2a3054b-6ec3-476d-961c-c296cddb33ec"
+    },
+    {
+      "firstName": "Robert",
+      "lastName": "Ferguson",
+      "email": "robert@blackdovedesign.com",
+      "password": "secret1",
+      "confrimpassword": "secret1",
+      "_id": "2ebbbd64-1c32-40c5-a368-4815b75d51e5"
     }
   ]
 }
