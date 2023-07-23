@@ -118,7 +118,6 @@ export const conversions = {
         let windChill = 0;
         windChill = 13.12 + (0.6215 * temperature) - 11.37 * (Math.pow(windSpeed, 0.16))
             + (0.3965 * temperature) * (Math.pow(windSpeed, 0.16));
-            console.log(windChill);
         return Math.round(windChill * 100.0) / 100.0;
       },
 

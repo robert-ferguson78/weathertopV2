@@ -11,11 +11,11 @@ export const dashboardController = {
     };
     for (const station of viewData.stations) {
       const readingObject = await lastReadings(station._id);
-      console.log(`${JSON.stringify(readingObject)}`);
+      // console.log(`${JSON.stringify(readingObject)}`);
       Object.assign(station, readingObject.reading)
     }
     console.log("dashboard rendering");
-    console.log(`${JSON.stringify(viewData)}`);
+    // console.log(`${JSON.stringify(viewData)}`);
     response.render("dashboard-view", viewData);
   },
 
@@ -31,4 +31,12 @@ export const dashboardController = {
     await stationStore.addStation(newStation);
     response.redirect("/dashboard");
   },
+
+  async deleteStation(request, response) {
+    const stationId = request.params.id;
+    console.log(`Deleting Station ${stationId}`);
+    await stationStore.deleteStationById(stationId);
+    response.redirect("/dashboard");
+  },
+
 };
