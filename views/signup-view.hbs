@@ -1,27 +1,58 @@
 {{> welcome-menu active="signup"}}
 
-<section class="section">
-  <h1 class="title">Sign up</h1>
-  <form action="/register" method="POST">
-    <label class="label">Name</label>
-    <div class="field is-horizontal">
-      <div class="field-body">
-        <div class="field">
-          <input class="input" type="text" placeholder="Enter first name" name="firstName">
+<!--Signup content start-->
+<section class="content box">
+    <div class="columns">
+        <!--Signup form start-->
+        <div class="column is-half">
+            <form action="/register" method="POST">
+                <h3 class="subtitle">Register</h3>
+                {{!-- <!--User info messaging start-->
+                #{if duplicateEmail}
+                <div class="notification is-danger">${duplicateEmail}</div>
+                #{/if}
+                #{if deleteAccount}
+                <div class="notification is-success">${deleteAccount}</div>
+                #{/if}
+                <!--User info messaging end--> --}}
+                <div class="field is-horizontal field-body">
+                    <div class="field">
+                        <label class="label">First Name</label>
+                        <p class="control is-expanded">
+                            <input class="input" type="text" placeholder="First Name" name="firstName" required>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <label class="label">Last Name</label>
+                        <p class="control">
+                            <input class="input" type="text" placeholder="Last Name" name="lastName" required>
+                        </p>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <input class="input" type="email" placeholder="Email" name="email" required>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <input id="password" class="input" type="password" name="password" onkeyup='check();' required>
+                </div>
+                <div class="field">
+                    <label class="label">Confirm Password</label>
+                    <input id="confrimpassword" class="input" type="password" name="confrimpassword" onkeyup='check();'
+                           required>
+                    <span id="warning"></span>
+                </div>
+                <button id="btSubmit" class="button is-link is-info">Submit</button>
+            </form>
+            <script type="text/javascript" src="../javascripts/custom.js"></script>
         </div>
-        <div class="field">
-          <input class="input" type="text" placeholder="Enter last name" name="lastName">
+        <!--Signup form end-->
+        <!--Sign up Graphic start-->
+        <div class="column is-one-half has-text-centered">
+            <img src="../images/register-member.png">
         </div>
-      </div>
+        <!--Sign up Graphic end-->
     </div>
-    <div class="field">
-      <label class="label">Email</label> <input class="input" type="text" placeholder="Enter email" name="email">
-    </div>
-    <div class="field">
-      <label class="label">Password</label> <input class="input" type="password" placeholder="Enter Password" name="password">
-    </div>
-    <div class="field is-grouped">
-      <button class="button is-link">Submit</button>
-    </div>
-  </form>
 </section>
+<!--Signup content end-->
