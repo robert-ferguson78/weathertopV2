@@ -2,69 +2,6 @@
   "file": "./models/readings.json",
   "readings": [
     {
-      "code": 400,
-      "temperature": 12,
-      "windSpeed": 112,
-      "windDirection": 112,
-      "pressure": 233,
-      "_id": "e4f93d5f-1fc7-46ac-a360-1d8bd7112db4",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "code": 100,
-      "temperature": 34.4,
-      "windSpeed": 57,
-      "windDirection": 200,
-      "pressure": 100,
-      "_id": "35438529-505e-4085-9cc4-bc8deabb399f",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "code": 600,
-      "temperature": 24,
-      "windSpeed": 32,
-      "windDirection": 100,
-      "pressure": 56,
-      "_id": "8a11a5a5-97a7-4494-ba74-69f89da1162d",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "code": 400,
-      "temperature": 32,
-      "windSpeed": 55,
-      "windDirection": 10,
-      "pressure": 211,
-      "_id": "e94a2f0c-5b72-4ae8-bb5d-4fbea8064807",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "code": 200,
-      "temperature": 11,
-      "windSpeed": 22,
-      "windDirection": 80,
-      "pressure": 33,
-      "_id": "a317948e-a395-46f9-b10e-9a971a800444",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "code": 100,
-      "temperature": 55,
-      "windSpeed": 12,
-      "windDirection": 50,
-      "pressure": 230,
-      "_id": "27515368-4317-4cd9-8eca-8fddab7a3d7b",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "code": 400,
-      "temperature": 44,
-      "windDirection": 10,
-      "windSpeed": 7,
-      "pressure": 123,
-      "_id": "8d3ef129-f9d8-414c-85e0-64f6d437dc5e",
-      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
       "code": 300,
       "temperature": 11,
       "windDirection": 11,
@@ -74,48 +11,73 @@
       "stationid": "cf408b7a-53d4-4eeb-8cca-c6e670c49387"
     },
     {
+      "timeStamp": "2023-07-24 12:37:07",
       "code": 100,
-      "temperature": 1,
-      "windDirection": 1,
-      "windSpeed": 1,
-      "pressure": 1,
-      "_id": "5f53b4b3-bde4-4610-918b-8f5b30b350c6",
-      "stationid": "054e3182-8066-4133-b1ab-f985d16ccb2e"
-    },
-    {
-      "code": 300,
-      "temperature": 3,
-      "windDirection": 3,
-      "windSpeed": 3,
-      "pressure": 3,
-      "_id": "eebf56cb-1e14-4d58-9067-b79116f5d746",
-      "stationid": "054e3182-8066-4133-b1ab-f985d16ccb2e"
-    },
-    {
-      "code": 100,
-      "temperature": 33,
-      "windDirection": 6,
-      "windSpeed": 6,
-      "pressure": 100,
-      "_id": "fcc1e58c-4082-45ef-b563-f2eeed2aec20",
+      "temperature": 10,
+      "windDirection": 10,
+      "windSpeed": 10,
+      "pressure": 10,
+      "_id": "19f770b1-9012-4a2a-bd88-afba86457661",
       "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
     },
     {
-      "code": 100,
-      "temperature": 4,
-      "windDirection": 4,
-      "windSpeed": 4,
-      "pressure": 4,
-      "_id": "15ff13f3-8e99-497d-b632-a973543bc620",
-      "stationid": "054e3182-8066-4133-b1ab-f985d16ccb2e"
+      "timeStamp": "2023-07-24 12:37:16",
+      "code": 200,
+      "temperature": 20,
+      "windDirection": 20,
+      "windSpeed": 20,
+      "pressure": 20,
+      "_id": "7b596493-c38a-4b99-a228-3fa6431e9574",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
     },
     {
+      "timeStamp": "2023-07-24 12:37:29",
+      "code": 300,
+      "temperature": 30,
+      "windDirection": 30,
+      "windSpeed": 30,
+      "pressure": 30,
+      "_id": "412f0f55-eb09-42c8-a500-79ac33f7e67f",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "timeStamp": "2023-07-24 12:37:39",
       "code": 400,
-      "temperature": 44,
-      "windDirection": 5,
-      "windSpeed": 5,
-      "pressure": 99,
-      "_id": "53b5c902-1361-44b8-812f-d2d171db2660",
+      "temperature": 40,
+      "windDirection": 40,
+      "windSpeed": 40,
+      "pressure": 40,
+      "_id": "c0b095d0-3adf-469a-9780-c391ad747241",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "timeStamp": "2023-07-24 12:37:54",
+      "code": 500,
+      "temperature": 10,
+      "windDirection": 30,
+      "windSpeed": 20,
+      "pressure": 40,
+      "_id": "713e44be-0739-42ec-87e7-a9d52c85fa7f",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "timeStamp": "2023-07-24 12:38:32",
+      "code": 600,
+      "temperature": 1,
+      "windDirection": 20,
+      "windSpeed": 10,
+      "pressure": 30,
+      "_id": "09a50871-e150-42d4-bc7e-f2f02ffdf2fb",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
+    },
+    {
+      "timeStamp": "2023-07-24 12:38:52",
+      "code": 700,
+      "temperature": 1,
+      "windDirection": 1,
+      "windSpeed": 1,
+      "pressure": 20,
+      "_id": "bf8b286e-4857-43e5-b683-3f94fd229a67",
       "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
     }
   ]
