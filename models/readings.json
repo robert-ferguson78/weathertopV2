@@ -108,6 +108,15 @@
       "pressure": 4,
       "_id": "15ff13f3-8e99-497d-b632-a973543bc620",
       "stationid": "054e3182-8066-4133-b1ab-f985d16ccb2e"
+    },
+    {
+      "code": 400,
+      "temperature": 44,
+      "windDirection": 5,
+      "windSpeed": 5,
+      "pressure": 99,
+      "_id": "53b5c902-1361-44b8-812f-d2d171db2660",
+      "stationid": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
     }
   ]
 }

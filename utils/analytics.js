@@ -30,12 +30,12 @@ export const lastReadings = async (id) => {
     reading.windChill = conversions.calculateWindChill(reading.latestTempC, reading.latestWindSpeedNumber);
     reading.latestPressure = stationReadings[lastReading].pressure;
     reading.latestTempF = conversions.celsiusToFahrenheit(reading.latestTempC);
-    reading.minWindSpeed = maxMin.minMaxReadings(stationReadings, "windSpeed", "min");
-    reading.maxWindSpeed = maxMin.minMaxReadings(stationReadings, "windSpeed", "max");
-    reading.minPressure = maxMin.minMaxReadings(stationReadings, "pressure", "min");
-    reading.maxPressure = maxMin.minMaxReadings(stationReadings, "pressure", "max");
-    reading.minTemp = maxMin.minMaxReadings(stationReadings, "temperature", "min");
-    reading.maxTemp = maxMin.minMaxReadings(stationReadings, "temperature", "max");
+    reading.minWindSpeed = maxMin.minMaxReadings(array.map( reading => reading.windSpeed), "min");
+    reading.maxWindSpeed = maxMin.minMaxReadings(array.map( reading => reading.windSpeed), "max");
+    reading.minPressure = maxMin.minMaxReadings(array.map( reading => reading.pressure), "min");
+    reading.maxPressure = maxMin.minMaxReadings(array.map( reading => reading.pressure), "max");
+    reading.minTemp = maxMin.minMaxReadings(array.map( reading => reading.temperature), "min");
+    reading.maxTemp = maxMin.minMaxReadings(array.map( reading => reading.temperature), "max");
     reading.trendWind = trends.trendDirection(array.map( reading => reading.windSpeed));
     reading.trendTemp = trends.trendDirection(array.map( reading => reading.temperature));
     reading.trendPressure = trends.trendDirection(array.map( reading => reading.pressure));
