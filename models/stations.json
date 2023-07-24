@@ -2,59 +2,11 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "stationName": "Second station",
-      "latitude": "0.098",
-      "longitude": "-2.98",
-      "userid": "a2a3054b-6ec3-476d-961c-c296cddb33ec",
-      "_id": "348f873a-d1ed-434d-8eaf-f42086bc235e"
-    },
-    {
-      "stationName": "Third station",
-      "latitude": "60.098",
-      "longitude": "-50.98",
-      "userid": "a2a3054b-6ec3-476d-961c-c296cddb33ec",
-      "_id": "70768619-66bc-4d97-98a0-08e9d208f6eb"
-    },
-    {
-      "stationName": "reading 1",
-      "latitude": "20.89",
-      "longitude": "-33.9",
+      "stationName": "first",
+      "latitude": "1",
+      "longitude": "1",
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
-      "_id": "ef2e997a-b836-4bff-8c83-1c91d16e089e"
-    },
-    {
-      "stationName": "new station",
-      "latitude": "50.098",
-      "longitude": "-32.988",
-      "userid": "a2a3054b-6ec3-476d-961c-c296cddb33ec",
-      "_id": "d8aad95c-9854-4a71-9ba0-66e939a4b39f"
-    },
-    {
-      "stationName": "new station 2",
-      "latitude": "80.08",
-      "longitude": "-76.00",
-      "userid": "a2a3054b-6ec3-476d-961c-c296cddb33ec",
-      "_id": "989a2827-2a3e-4882-9ba6-8e4c0559a332"
-    },
-    {
-      "stationName": "new station 3",
-      "latitude": "55.006",
-      "longitude": "-43.332",
-      "_id": "db16909c-48df-4452-8cd8-4d040c9529f9"
-    },
-    {
-      "stationName": "Homer 1",
-      "latitude": "1.0001",
-      "longitude": "-1.0001",
-      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
-      "_id": "054e3182-8066-4133-b1ab-f985d16ccb2e"
-    },
-    {
-      "stationName": "marge",
-      "latitude": "2.0002",
-      "longitude": "-2.002",
-      "userid": "a2a3054b-6ec3-476d-961c-c296cddb33ec",
-      "_id": "d4915793-c068-4383-a98e-10f764f72a16"
+      "_id": "b30e357c-0011-4f2b-9b35-5d07818f1515"
     }
   ]
 }

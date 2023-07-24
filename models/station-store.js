@@ -33,8 +33,12 @@ export const stationStore = {
   async deleteStationById(id) {
     await db.read();
     const index = db.data.stations.findIndex((station) => station._id === id);
+     // If station exists, remove it and delete related readings.
+    if(index !== -1) {
     db.data.stations.splice(index, 1);
+    await readingStore.deleteStationReadings(id);
     await db.write();
+    }
   },
 
   async deleteAllstations() {

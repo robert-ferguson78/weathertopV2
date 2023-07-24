@@ -35,6 +35,12 @@ export const readingStore = {
     await db.write();
   },
 
+  async deleteStationReadings(id) {
+    await db.read();
+    db.data.readings = db.data.readings.filter(reading => reading.stationid !== id);
+    await db.write();
+  },
+
   async deleteAllReadings() {
     db.data.readings = [];
     await db.write();

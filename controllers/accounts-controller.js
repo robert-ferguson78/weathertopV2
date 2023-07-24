@@ -33,7 +33,7 @@ export const accountsController = {
         title: "Edit User Profile",
         user: loggedInUser,
       };
-      console.log(`${JSON.stringify(viewData)}`);
+      // console.log(`${JSON.stringify(viewData)}`);
       response.render("profile", viewData);
     },
   
@@ -43,10 +43,9 @@ export const accountsController = {
     const newUser = {
       firstName: request.body.firstName,
       lastName: request.body.lastName,
-      // email: request.body.email,
       password: request.body.password
     };
-    console.log(`${JSON.stringify(userId._id)}`);
+    // console.log(`${JSON.stringify(userId._id)}`);
     await userStore.updateUser(userId._id, newUser);
     response.redirect("/profile");
   },
