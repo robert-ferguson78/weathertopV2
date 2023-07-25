@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import { initStore } from "../utils/store-utils.js";
+import { stationStore } from "../models/station-store.js";
 
 const db = initStore("users");
 
@@ -41,6 +42,7 @@ export const userStore = {
     await db.read();
     const index = db.data.users.findIndex((user) => user._id === id);
     db.data.users.splice(index, 1);
+    await stationStore.deleteStationsById(id);
     await db.write();
   },
 

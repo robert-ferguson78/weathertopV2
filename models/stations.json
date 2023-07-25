@@ -2,11 +2,18 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "stationName": "first",
+      "stationName": "homer 1",
       "latitude": "1",
       "longitude": "1",
       "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
-      "_id": "b30e357c-0011-4f2b-9b35-5d07818f1515"
+      "_id": "032b5a8b-900f-4664-aa05-bffdc823ac88"
+    },
+    {
+      "stationName": "homer 2",
+      "latitude": "2",
+      "longitude": "2",
+      "userid": "bca0795f-ddb8-4d6c-b287-5e232ed9e397",
+      "_id": "8edb6bde-adab-4931-856f-004defeae9fb"
     }
   ]
 }

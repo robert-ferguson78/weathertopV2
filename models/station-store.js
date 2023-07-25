@@ -41,8 +41,22 @@ export const stationStore = {
     }
   },
 
+  async deleteStationsById(stationId) {
+    await db.read();
+    let stationRemoveList = db.data.stations.filter((station) => station.userid === stationId._id);
+    // console.log(`${JSON.stringify(stationTest)}`);
+    stationRemoveList = Array.from(stationRemoveList);
+    let stationIdsToRemove = [];
+    for (let i=0; i < stationRemoveList.length; i++ ) {
+      stationIdsToRemove[i] = stationRemoveList[i]._id;
+    };
+    await readingStore.deleteStationReadings(stationIdsToRemove);
+    db.data.stations = db.data.stations.filter((station) => station.userid !== stationId._id);
+    await db.write();
+  },
+
   async deleteAllstations() {
     db.data.stations = [];
     await db.write();
-  },
+  }
 };

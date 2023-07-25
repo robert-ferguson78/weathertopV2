@@ -37,7 +37,7 @@ export const accountsController = {
       response.render("profile", viewData);
     },
   
-  async profileUpdate(request, response){
+  async profileUpdate(request, response) {
   const loggedInUser = await accountsController.getLoggedInUser(request);
     const userId = await userStore.getUserById(loggedInUser._id);
     const newUser = {
@@ -48,6 +48,13 @@ export const accountsController = {
     // console.log(`${JSON.stringify(userId._id)}`);
     await userStore.updateUser(userId._id, newUser);
     response.redirect("/profile");
+  },
+
+  async profileDelete(request, response) {
+    const loggedInUser = await accountsController.getLoggedInUser(request);
+    const userId = await userStore.getUserById(loggedInUser._id);
+      await userStore.deleteUserById(userId);
+      response.redirect("/");
   },
 
   async register(request, response) {
