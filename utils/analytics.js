@@ -36,9 +36,9 @@ export const lastReadings = async (id) => {
     reading.maxPressure = maxMin.minMaxReadings(array.map( reading => reading.pressure), "max");
     reading.minTemp = maxMin.minMaxReadings(array.map( reading => reading.temperature), "min");
     reading.maxTemp = maxMin.minMaxReadings(array.map( reading => reading.temperature), "max");
-    reading.trendWind = trends.trendDirection(array.map( reading => reading.windSpeed));
-    reading.trendTemp = trends.trendDirection(array.map( reading => reading.temperature));
-    reading.trendPressure = trends.trendDirection(array.map( reading => reading.pressure));
+    reading.trendWind = trends.trendDetails(array.map( reading => reading.windSpeed));
+    reading.trendTemp = trends.trendDetails(array.map( reading => reading.temperature));
+    reading.trendPressure = trends.trendDetails(array.map( reading => reading.pressure));
     reading.displayReadings = true;
   }
   return {

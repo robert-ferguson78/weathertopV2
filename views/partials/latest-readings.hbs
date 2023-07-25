@@ -61,7 +61,7 @@
                     Min: {{minTemp}} <i class="fa-regular fa-temperature-arrow-down"></i><br/>
                     Max: {{maxTemp}} <i class="fa-regular fa-temperature-arrow-up"></i><br/>
                     {{#if trendTemp}}
-                    Trend: <i class="fa-sharp fa-solid {{trendTemp}}"></i>
+                        Trend {{trendTemp.trendText}}: <i class="fa-sharp fa-solid {{trendTemp.trendDirection}}"></i>
                     {{/if}}
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     Min: {{minWindSpeed}} <i class="fa-solid fa-wind"></i><br/>
                     Max: {{maxWindSpeed}} <i class="fa-sharp fa-solid fa-tornado"></i><br/>
                     {{#if trendTemp}}
-                    Trend: <i class="fa-sharp fa-solid {{trendWind}}"></i>
+                        Trend {{trendWind.trendText}}: <i class="fa-sharp fa-solid {{trendWind.trendDirection}}"></i>
                     {{/if}}
                 </div>
             </div>
@@ -120,7 +120,7 @@
                     Min: {{minPressure}} hpa <i class="fa-regular fa-gauge-simple-min"></i><br/>
                     Max: {{maxPressure}} hpa <i class="fa-regular fa-gauge-max"></i><br/>
                     {{#if trendPressure}}
-                    Trend: <i class="fa-sharp fa-solid {{trendPressure}}"></i>
+                        Trend {{trendPressure.trendText}}: <i class="fa-sharp fa-solid {{trendPressure.trendDirection}}"></i>
                     {{/if}}
                 </div>
             </div>
