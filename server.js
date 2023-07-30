@@ -15,6 +15,20 @@ app.set("view engine", ".hbs");
 app.set("views", "./views");
 app.use("/", router);
 
+var options = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html', 'png', 'jpg', 'svg' ],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders: function (res, path, stat) {
+    res.set('x-timestamp', Date.now())
+  }
+}
+
+app.use(express.static('public', options));
+
 const listener = app.listen(process.env.PORT || 4000, function () {
   console.log(`Todolist started on http://localhost:${listener.address().port}`);
 });
