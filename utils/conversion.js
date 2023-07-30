@@ -1,26 +1,26 @@
 const weatherConditions = new Map();
-    weatherConditions.set(100, { description: "Clear", icon: "clear-day" });
-    weatherConditions.set(200, { description: "Partial Clouds", icon: "cloud-up" });
-    weatherConditions.set(300, { description: "Cloudy", icon: "cloudy" });
-    weatherConditions.set(400, { description: "Light Showers", icon: "drizzle" });
-    weatherConditions.set(500, { description: "Heavy Showers", icon: "extreme-rain" });
-    weatherConditions.set(600, { description: "Rain", icon: "rain" });
-    weatherConditions.set(700, { description: "Snow", icon: "snow" });
-    weatherConditions.set(800, { description: "Thunder", icon: "thunderstorms" });
+    weatherConditions.set(100, { description: "Clear", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/clear-day" });
+    weatherConditions.set(200, { description: "Partial Clouds", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloud-up" });
+    weatherConditions.set(300, { description: "Cloudy", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloudy" });
+    weatherConditions.set(400, { description: "Light Showers", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
+    weatherConditions.set(500, { description: "Heavy Showers", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
+    weatherConditions.set(600, { description: "Rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/rain" });
+    weatherConditions.set(700, { description: "Snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow" });
+    weatherConditions.set(800, { description: "Thunder", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms" });
 
     const WindSpeed = new Map();
-    WindSpeed.set(0, { description: "Calm", icon: "beaufort-0" });
-    WindSpeed.set(1, { description: "Light Air", icon: "beaufort-1" });
-    WindSpeed.set(2, { description: "Light Breeze", icon: "beaufort-2" });
-    WindSpeed.set(3, { description: "Gentle Breeze", icon: "beaufort-3" });
-    WindSpeed.set(4, { description: "Moderate Breeze", icon: "beaufort-4" });
-    WindSpeed.set(5, { description: "Fresh Breeze", icon: "beaufort-5" });
-    WindSpeed.set(6, { description: "Strong Breeze", icon: "beaufort-6" });
-    WindSpeed.set(7, { description: "Near Gale", icon: "beaufort-7" });
-    WindSpeed.set(8, { description: "Gale", icon: "beaufort-8" });
-    WindSpeed.set(9, { description: "Severe Gale", icon: "beaufort-9" });
-    WindSpeed.set(10, { description: "Strong storm", icon: "beaufort-10" });
-    WindSpeed.set(11, { description: "Violent Storm", icon: "beaufort-11" });
+    WindSpeed.set(0, { description: "Calm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-0" });
+    WindSpeed.set(1, { description: "Light Air", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-1" });
+    WindSpeed.set(2, { description: "Light Breeze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-2" });
+    WindSpeed.set(3, { description: "Gentle Breeze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-3" });
+    WindSpeed.set(4, { description: "Moderate Breeze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-4" });
+    WindSpeed.set(5, { description: "Fresh Breeze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-5" });
+    WindSpeed.set(6, { description: "Strong Breeze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-6" });
+    WindSpeed.set(7, { description: "Near Gale", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-7" });
+    WindSpeed.set(8, { description: "Gale", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-8" });
+    WindSpeed.set(9, { description: "Severe Gale", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-9" });
+    WindSpeed.set(10, { description: "Strong storm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-10" });
+    WindSpeed.set(11, { description: "Violent Storm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-11" });
 
 export const conversions = {
     celsiusToFahrenheit(temperature) {
