@@ -131,13 +131,33 @@ iframe {
     background-color: #083643;
     color: #ffffff;
   }
+  .leaflet-popup-content-wrapper strong {
+    color: #ffffff;
+    font-size: 18px;
+  }
   .leaflet-popup-content-wrapper a {
     background-color: #009e86;
     color: #ffffff;
     padding: 5px 7px;
     border-radius: 3px;
   }
-  
+  .popup-stats-ctn {
+    display: block;
+    display: flex;
+    align-items: center;
+    margin-top: -5px;
+  }
+  .popup-stats-ctn.title {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  .popup-stats-ctn.btn {
+    margin-top:0px;
+  }
+  .popup-stats-ctn img {
+    max-height:35px;
+  }
 /* reference to this table responsive code is here https://medium.com/allenhwkim/mobile-friendly-table-b0cb066dbc0e */
 @media screen and (max-width: 600px) {
     table thead {
