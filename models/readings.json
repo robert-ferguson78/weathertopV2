@@ -100,6 +100,16 @@
       "pressure": 3,
       "_id": "eb66a803-92b4-4d0d-906b-6abdca2a646b",
       "stationid": "8edb6bde-adab-4931-856f-004defeae9fb"
+    },
+    {
+      "timeStamp": "2023-08-20 16:08:17",
+      "code": 100,
+      "temperature": 6,
+      "windDirection": 4,
+      "windSpeed": 5,
+      "pressure": 4,
+      "_id": "0522cab0-777b-489b-a4a5-5360ed240995",
+      "stationid": "032b5a8b-900f-4664-aa05-bffdc823ac88"
     }
   ]
 }
