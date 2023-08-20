@@ -127,12 +127,16 @@ iframe {
 /* table */
 
 /* Leafmap styling */
-.leaflet-popup-content-wrapper {
+.leaflet-popup {
+    min-width: 235px;
+}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
     background-color: #083643;
     color: #ffffff;
   }
   .leaflet-popup-content-wrapper strong {
-    color: #ffffff;
+    color: #083643;
     font-size: 18px;
   }
   .leaflet-popup-content-wrapper a {
@@ -148,15 +152,24 @@ iframe {
     margin-top: -5px;
   }
   .popup-stats-ctn.title {
+    background-color: #ffffff;
+    padding: 5px 3px;
     display: block;
     text-align: center;
-    margin-bottom: 5px;
+    margin: 7px auto;
+    border-radius: 5px;
   }
   .popup-stats-ctn.btn {
-    margin-top:0px;
+    margin: 7px auto;
+    justify-content: center;
   }
   .popup-stats-ctn img {
     max-height:35px;
+  }
+  .leaflet-container a.leaflet-popup-close-button,
+  .leaflet-container a.leaflet-popup-close-button:hover, 
+  .leaflet-container a.leaflet-popup-close-button:focus {
+    color: #ffffff;
   }
 /* reference to this table responsive code is here https://medium.com/allenhwkim/mobile-friendly-table-b0cb066dbc0e */
 @media screen and (max-width: 600px) {
