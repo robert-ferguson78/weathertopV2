@@ -1,0 +1,55 @@
+
+<div class="content box p-0 is-clipped">
+  <div id="map" class="mapBorderColor" style="height: 450px;"></div>
+</div>
+
+<script>
+  // Initializes map
+  const map = L.map('map'); 
+
+  // Sets initial coordinates and zoom level
+  map.setView([52.161435, -7.149295], 8); 
+  // Disables double click zoom
+  map.doubleClickZoom.disable();
+
+
+  // Sets map data source and associates with map
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+  }).addTo(map); 
+
+  let marker, circle, zoomed;
+
+
+  // Sets average lat and lng to 0
+  let avgLat = avgLng = 0;
+  // Iterates through stations and adds markers to map
+  {{#each stations}}
+    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}"});
+    marker.bindPopup("<h1><strong>{{name}}</strong></h1>" 
+              + "<br>"
+              + "LatLng(" + {{latitude}} + "," 
+              + {{longitude}} + ")"
+              + "<br>" 
+              + "Temp: " + {{latestTempC}} 
+              + " &#176C, Wind: " + {{latestWindSpeed}} 
+              + " bft, Pressure: "
+              +  {{latestPressure}} + " hPa"
+              + "<br><br>"
+              + "<a href='/station/{{_id}}'>View Station Readings</a>"
+              );
+    marker.addTo(map);
+    
+    avgLat += {{latitude}};
+    avgLng += {{longitude}};
+  {{/each}}
+  // Calculates average lat and lng
+  avgLat /= {{stations.length}};
+  avgLng /= {{stations.length}};
+  // Sets map view to average lat and lng
+  map.setView([avgLat, avgLng], 6);
+  map.doubleClickZoom.disable();
+  // Adds locate control to map
+  L.control.locate().addTo(map);
+</script>
