@@ -128,7 +128,7 @@ iframe {
 
 /* Leafmap styling */
 .leaflet-popup {
-    min-width: 245px;
+    min-width: 235px;
 }
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
