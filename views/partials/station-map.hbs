@@ -15,9 +15,9 @@
 
   // Sets map data source and associates with map
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
+      maxZoom: 15,
       attribution: '© OpenStreetMap'
-  }).addTo(map); 
+  }).addTo(map);
 
   let marker, circle, zoomed;
 
@@ -27,15 +27,15 @@
   // Iterates through stations and adds markers to map
   {{#each stations}}
     marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}"});
-    marker.bindPopup("<h1><strong>{{name}}</strong></h1>" 
+    marker.bindPopup("station: {{stationName}}" 
               + "<br>"
-              + "LatLng(" + {{latitude}} + "," 
-              + {{longitude}} + ")"
+              + "Lat: {{latitude}}" + " Long: {{longitude}}"
               + "<br>" 
-              + "Temp: " + {{latestTempC}} 
-              + " &#176C, Wind: " + {{latestWindSpeed}} 
-              + " bft, Pressure: "
-              +  {{latestPressure}} + " hPa"
+              + "Temp: {{latestTempC}} &#176C / {{latestTempF}} &#8457;"
+              + "<br>"
+              + "Wind: {{latestWindSpeed}} bft"
+              + "<br>"
+              + "Pressure: {{latestPressure}} hPa"
               + "<br><br>"
               + "<a href='/station/{{_id}}'>View Station Readings</a>"
               );

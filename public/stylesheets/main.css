@@ -125,6 +125,19 @@ iframe {
 }
 
 /* table */
+
+/* Leafmap styling */
+.leaflet-popup-content-wrapper {
+    background-color: #083643;
+    color: #ffffff;
+  }
+  .leaflet-popup-content-wrapper a {
+    background-color: #009e86;
+    color: #ffffff;
+    padding: 5px 7px;
+    border-radius: 3px;
+  }
+  
 /* reference to this table responsive code is here https://medium.com/allenhwkim/mobile-friendly-table-b0cb066dbc0e */
 @media screen and (max-width: 600px) {
     table thead {
