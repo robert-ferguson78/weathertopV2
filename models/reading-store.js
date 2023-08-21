@@ -4,6 +4,7 @@ import { initStore } from "../utils/store-utils.js";
 const db = initStore("readings");
 
 export const readingStore = {
+  // Get all readings
   async getAllReadings() {
     await db.read();
     return db.data.readings;
@@ -39,7 +40,7 @@ export const readingStore = {
      console.log("station delete log", id);
     await db.read();
     for (let i=0; i < id.length; i++ ) {
-      db.data.readings = db.data.readings.filter(reading => reading.stationid !== id[i]);
+      db.data.readings = db.data.readings.filter(reading => reading.stationid !== id);
       // console.log(db.data.readings);
       // console.log(id[i]);
     };
