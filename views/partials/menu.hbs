@@ -13,10 +13,15 @@
     <!--Navigation links start-->
     <div id="nav-links" class="navbar-menu">
         <div class="navbar-end">
+            {{#if user}}
                 <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
-                <a id="profile" class="navbar-item" href="/profile/{{user._id}}">Profile </a>
+                <a id="profile" class="navbar-item" href="/profile/">Profile </a>
                 <a id="about" class="navbar-item" href="/about">About </a>
                 <a id="logout" class="navbar-item" href="/logout">Logout </a>
+            {{else}}
+                <a id="signup" class="navbar-item" href="/signup">Signup </a>
+                <a id="login" class="navbar-item" href="/login">Login </a>
+            {{/if}}
         </div>
     </div>
     <!--Navigation links end-->
