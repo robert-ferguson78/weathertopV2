@@ -1,20 +1,17 @@
-{{> welcome-menu active="signup"}}
+{{> menu active="signup"}}
 
 <!--Signup content start-->
 <section class="content box">
     <div class="columns">
         <!--Signup form start-->
         <div class="column is-half">
+            {{#if message.error}}
+                <div id="user_message" class="notification is-danger">
+                    {{message.error}}
+                </div>
+            {{/if}}
             <form action="/register" method="POST">
                 <h3 class="subtitle">Register</h3>
-                {{!-- <!--User info messaging start-->
-                #{if duplicateEmail}
-                <div class="notification is-danger">${duplicateEmail}</div>
-                #{/if}
-                #{if deleteAccount}
-                <div class="notification is-success">${deleteAccount}</div>
-                #{/if}
-                <!--User info messaging end--> --}}
                 <div class="field is-horizontal field-body">
                     <div class="field">
                         <label class="label">First Name</label>

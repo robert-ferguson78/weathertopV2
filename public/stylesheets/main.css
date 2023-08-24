@@ -103,7 +103,7 @@ footer .dark-green {
 
 /* 404 */
 .four_zero_four_bg {
-    background-image: url(/public/images/caveman.gif);
+    background-image: url(../images/caveman.gif);
     height: 400px;
     background-position: center;
 }
@@ -171,6 +171,7 @@ iframe {
   .leaflet-container a.leaflet-popup-close-button:focus {
     color: #ffffff;
   }
+
 /* reference to this table responsive code is here https://medium.com/allenhwkim/mobile-friendly-table-b0cb066dbc0e */
 @media screen and (max-width: 600px) {
     table thead {

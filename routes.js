@@ -4,6 +4,7 @@ import express from "express";
 import { attachUser } from "./middleware/attach-user.js";
 import { checkUserAuth } from "./middleware/check-user-auth.js";
 import { error404 } from "./middleware/error404.js";
+import { message } from "./middleware/user-message.js";
 
 // Controllers
 import { accountsController } from "./controllers/accounts-controller.js";
@@ -16,6 +17,9 @@ export const router = express.Router();
 
 // Let the user be available in routes
 router.use(attachUser);
+
+// User messages
+router.use(message);
 
 // Set up public accessible routes
 router.get("/", accountsController.index);
