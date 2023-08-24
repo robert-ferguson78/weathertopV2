@@ -3,6 +3,7 @@ import express from "express";
 // Middleware for user and user logged in checks
 import { attachUser } from "./middleware/attach-user.js";
 import { checkUserAuth } from "./middleware/check-user-auth.js";
+import { error404 } from "./middleware/error404.js";
 
 // Controllers
 import { accountsController } from "./controllers/accounts-controller.js";
@@ -37,3 +38,6 @@ router.post("/station/:id/autoreading", checkUserAuth(), stationController.gener
 router.get("/profile", checkUserAuth(), accountsController.profile);
 router.post("/profile/updateprofile/:_id", checkUserAuth(), accountsController.profileUpdate);
 router.get("/deleteaccount/:_id", checkUserAuth(), accountsController.profileDelete);
+
+// 404 pages
+router.use(error404);
