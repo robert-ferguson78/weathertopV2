@@ -35,10 +35,8 @@ export const accountsController = {
 
   // Display profile page
   async profile(request, response) {
-    const loggedInUser = await accountsController.getLoggedInUser(request);
       const viewData = {
         title: "Edit User Profile",
-        user: loggedInUser,
         message: request.message,
       };
       console.log(`${JSON.stringify(viewData)}`);
@@ -47,8 +45,8 @@ export const accountsController = {
   
   // Update profile info
   async profileUpdate(request, response) {
-  const loggedInUser = await accountsController.getLoggedInUser(request);
-  const userId = await userStore.getUserById(loggedInUser._id);
+  const loggedInUser = request.user._id;
+  const userId = await userStore.getUserById(loggedInUser);
   // Only upadte editable fields as email is not editable
   const newUser = {
     firstName: request.body.firstName,
@@ -63,8 +61,8 @@ export const accountsController = {
 
   // Delete user profile
   async profileDelete(request, response) {
-    const loggedInUser = await accountsController.getLoggedInUser(request);
-    const userId = await userStore.getUserById(loggedInUser._id);
+    const loggedInUser = request.user._id;
+    const userId = await userStore.getUserById(loggedInUser);
       await userStore.deleteUserById(userId);
       response.redirect("/");
   },
@@ -102,10 +100,4 @@ export const accountsController = {
     }
   },
 
-  // Check for logged in cookie
-  async getLoggedInUser(request) {
-    const userEmail = request.cookies.userAuth;
-    console.log(`Restricted area ${userEmail}`);
-    return await userStore.getUserByEmail(userEmail);
-  },
 };

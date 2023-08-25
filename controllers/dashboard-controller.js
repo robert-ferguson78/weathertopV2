@@ -5,12 +5,12 @@ import { lastReadings } from "../utils/analytics.js";
 export const dashboardController = {
   // Initial index page to display with view data to pass in
   async index(request, response) {
-    const loggedInUser = await accountsController.getLoggedInUser(request);
+    const loggedInUser = request.user._id;
 
     // Data to pass into View
     const viewData = {
       title: "Station Dashboard",
-      stations: await stationStore.getStationsByUserId(loggedInUser._id),
+      stations: await stationStore.getStationsByUserId(loggedInUser),
     };
 
     // Loop through last reading in Utils/Analytics to diplay last readings based on stations in view data
@@ -26,7 +26,7 @@ export const dashboardController = {
 
   // Add station to the logged in user 
   async addStation(request, response) {
-    const loggedInUser = await accountsController.getLoggedInUser(request);
+    const loggedInUser = request.user._id;
     const mixedCapStationname = request.body.stationName;
     const capitaliseName = mixedCapStationname.charAt(0).toUpperCase() + mixedCapStationname.slice(1);
     // Assign the data to be saved in storage
@@ -34,7 +34,7 @@ export const dashboardController = {
       stationName: capitaliseName,
       latitude: request.body.latitude,
       longitude: request.body.longitude,
-      userid: loggedInUser._id,
+      userid: loggedInUser,
     };
     console.log(`adding station ${newStation.stationName}`);
     // Save data in station storage
