@@ -1,4 +1,4 @@
-{{#if displayReadings}}
+{{#if (greaterOrEqual displayReadings 1)}}
 <!--Latest readings start-->
 <div class="columns reading">
     <!--Station location details start-->
@@ -57,13 +57,16 @@
                 </div>
             </div>
             <div class="columns is-centered is-mobile">
-                <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
-                    Min: {{minTemp}} <i class="fa-regular fa-temperature-arrow-down"></i><br/>
-                    Max: {{maxTemp}} <i class="fa-regular fa-temperature-arrow-up"></i><br/>
-                    {{#if trendTemp}}
-                        Trend {{trendTemp.trendText}}: <i class="fa-sharp fa-solid {{trendTemp.trendDirection}}"></i>
-                    {{/if}}
-                </div>
+            <!-- If there are 2 values to compare display min and max -->
+                {{#if (greaterOrEqual displayReadings 2)}}
+                    <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
+                        Min: {{minTemp}} <i class="fa-regular fa-temperature-arrow-down"></i><br/>
+                        Max: {{maxTemp}} <i class="fa-regular fa-temperature-arrow-up"></i><br/>
+                        {{#if (greaterOrEqual displayReadings 3)}}
+                            Trend {{trendTemp.trendText}}: <i class="fa-sharp fa-solid {{trendTemp.trendDirection}}"></i>
+                        {{/if}}
+                    </div>
+                {{/if}}
             </div>
             <!--Readings Temperature end-->
         </div>
@@ -89,9 +92,12 @@
                 <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
                     {{windCompassReading}} <i class="fa-solid fa-windsock"></i><br/>
                     Feels Like: {{windChill}} <i class="fa-sharp fa-regular fa-snow-blowing"></i><br/>
-                    Min: {{minWindSpeed}} <i class="fa-solid fa-wind"></i><br/>
-                    Max: {{maxWindSpeed}} <i class="fa-sharp fa-solid fa-tornado"></i><br/>
-                    {{#if trendTemp}}
+                    <!-- If there are 2 values to compare display min and max -->
+                    {{#if (greaterOrEqual displayReadings 2)}}
+                        Min: {{minWindSpeed}} <i class="fa-solid fa-wind"></i><br/>
+                        Max: {{maxWindSpeed}} <i class="fa-sharp fa-solid fa-tornado"></i><br/>
+                    {{/if}}
+                    {{#if (greaterOrEqual displayReadings 3)}}
                         Trend {{trendWind.trendText}}: <i class="fa-sharp fa-solid {{trendWind.trendDirection}}"></i>
                     {{/if}}
                 </div>
@@ -116,13 +122,16 @@
                 </div>
             </div>
             <div class="columns is-centered is-mobile">
-                <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
-                    Min: {{minPressure}} hpa <i class="fa-regular fa-gauge-simple-min"></i><br/>
-                    Max: {{maxPressure}} hpa <i class="fa-regular fa-gauge-max"></i><br/>
-                    {{#if trendPressure}}
-                        Trend {{trendPressure.trendText}}: <i class="fa-sharp fa-solid {{trendPressure.trendDirection}}"></i>
-                    {{/if}}
-                </div>
+            <!-- If there are 2 values to compare display min and max -->
+                {{#if (greaterOrEqual displayReadings 2)}}
+                    <div class="column reading is-9-desktop is-9-mobile has-text-centered-mobile flip-colour">
+                            Min: {{minPressure}} hpa <i class="fa-regular fa-gauge-simple-min"></i><br/>
+                            Max: {{maxPressure}} hpa <i class="fa-regular fa-gauge-max"></i><br/>
+                        {{#if (greaterOrEqual displayReadings 3)}}
+                            Trend {{trendPressure.trendText}}: <i class="fa-sharp fa-solid {{trendPressure.trendDirection}}"></i>
+                        {{/if}}
+                    </div>
+                {{/if}}
             </div>
             <!--Readings Pressure end-->
         </div>
