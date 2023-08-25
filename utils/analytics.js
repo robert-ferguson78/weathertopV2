@@ -7,7 +7,7 @@ export const lastReadings = async (id) => {
   let stationReadings = await readingStore.getReadingsBystationId(id);
   let array = stationReadings;
   let lastReading = null;
-  let displayReadings = false;
+  let displayReadings = 0;
   const reading = {
     latestCode: "No Code",
     latestTempC: "No Temp",
@@ -39,7 +39,7 @@ export const lastReadings = async (id) => {
     reading.trendWind = trends.trendDetails(array.map( reading => reading.windSpeed));
     reading.trendTemp = trends.trendDetails(array.map( reading => reading.temperature));
     reading.trendPressure = trends.trendDetails(array.map( reading => reading.pressure));
-    reading.displayReadings = true;
+    reading.displayReadings = stationReadings.length;
   }
   return {
     lastReading: lastReading,
