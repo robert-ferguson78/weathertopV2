@@ -27,17 +27,29 @@
   // Iterates through stations and adds markers to map
   {{#each stations}}
     marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}"});
-    marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{stationName}}</strong></span>" 
-              + "<span class='popup-stats-ctn'>"
-              + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/compass.svg'> {{latitude}}," + " {{longitude}}"
-              + "</span><span class='popup-stats-ctn'>"
-              + "<img src='{{latestWeatherIcon}}.svg'> {{latestWeatherDescription}}" + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thermometer.svg'> {{latestTempC}} &#176C <br> {{latestTempF}} &#8457;"
-              + "</span><span class='popup-stats-ctn'>"
-              + "<img src='{{latestWindSpeedIcon}}.svg'> {{latestWindSpeed}} bft" + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/barometer.svg'> {{latestPressure}} hPa"
-              + "</span><span class='popup-stats-ctn btn'>"
-              + "<a href='/station/{{_id}}'>View Station Readings</a>"
-              + "</span>"
-              );
+     // If there are readigns display all icons and data
+      {{#if (greaterOrEqual displayReadings 1)}}
+      marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{stationName}}</strong></span>" 
+                + "<span class='popup-stats-ctn'>"
+                + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/compass.svg'> {{latitude}}," + " {{longitude}}"
+                + "</span><span class='popup-stats-ctn'>"
+                + "<img src='{{latestWeatherIcon}}.svg'> {{latestWeatherDescription}}" + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thermometer.svg'> {{latestTempC}} &#176C <br> {{latestTempF}} &#8457;"
+                + "</span><span class='popup-stats-ctn'>"
+                + "<img src='{{latestWindSpeedIcon}}.svg'> {{latestWindSpeed}} bft" + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/barometer.svg'> {{latestPressure}} hPa"
+                + "</span><span class='popup-stats-ctn btn'>"
+                + "<a href='/station/{{_id}}'>View Station Readings</a>"
+                + "</span>"
+                );
+      {{else}}
+      marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{stationName}}</strong></span>" 
+                + "<span class='popup-stats-ctn'>"
+                + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/compass.svg'> {{latitude}}," + " {{longitude}}"
+                + "</span>"
+                + "<span class='popup-stats-ctn btn'>"
+                + "<a href='/station/{{_id}}'>View Station Readings</a>"
+                + "</span>"
+                );
+      {{/if}}
     marker.addTo(map);
     
     avgLat += {{latitude}};
