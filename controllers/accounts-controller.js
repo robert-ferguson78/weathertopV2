@@ -15,12 +15,14 @@ export const accountsController = {
       title: "Login to the Service",
       message: request.message,
     };
+    console.log(`login rendering`);
     response.render("login-view", viewData);
   },
 
   // Logout with redirect
   logout(request, response) {
-    response.cookie("userAuth", "");
+    response.clearCookie("userAuth");
+    console.log(`logout rendering`);
     response.redirect("/");
   },
 
@@ -30,6 +32,7 @@ export const accountsController = {
       title: "Login to the Service",
       message: request.message,
     };
+    console.log(`signup rendering`);
     response.render("signup-view", viewData);
   },
 
@@ -39,7 +42,7 @@ export const accountsController = {
         title: "Edit User Profile",
         message: request.message,
       };
-      console.log(`${JSON.stringify(viewData)}`);
+      console.log(`profile rendering`);
       response.render("profile", viewData);
     },
   
@@ -53,9 +56,9 @@ export const accountsController = {
     lastName: request.body.lastName,
     password: request.body.password
   };
-    // console.log(`${JSON.stringify(userId._id)}`);
+    console.log(`${JSON.stringify(userId._id)}`);
     await userStore.updateUser(userId._id, newUser);
-    response.cookie("message_success", "Profile Updated Successfully", { maxAge: 10000 });
+    response.cookie("message_success", "Profile Updated Successfully");
     response.redirect("/profile");
   },
 
@@ -64,6 +67,7 @@ export const accountsController = {
     const loggedInUser = request.user._id;
     const userId = await userStore.getUserById(loggedInUser);
       await userStore.deleteUserById(userId);
+      console.log(`deleted profile ${userId}`);
       response.redirect("/");
   },
 
@@ -77,7 +81,7 @@ export const accountsController = {
     };
     const existingUser = await userStore.getUserByEmail(request.body.email.toLowerCase());
     if (existingUser) {
-      response.cookie('message_error', 'This Email Is Already Registered.', { maxAge: 10000 });
+      response.cookie('message_error', 'This Email Is Already Registered.');
       response.redirect("/signup");
     } else {
     await userStore.addUser(user);
@@ -95,7 +99,8 @@ export const accountsController = {
       console.log(`logging in ${user.email}`);
       response.redirect("/dashboard");
     } else {
-      response.cookie('message_error', 'Login Failed, Incorrect Credentials', { maxAge: 10000 });
+      response.cookie('message_error', 'Login Failed, Incorrect Credentials');
+      console.log(`not logged in, redirected to login page`);
       response.redirect("/login");
     }
   },

@@ -23,6 +23,7 @@ export const stationController = {
       trendReadings: trendReadings,
     };
     Object.assign(viewData, stationReadings.reading)
+    console.log("station rendering");
     response.render("station-view", viewData);
   },
 
@@ -57,6 +58,7 @@ export const stationController = {
 
     // Save data to storage and redirect back to station
     await readingStore.addReading(station._id, newReading);
+    console.log(`add reading ${JSON.stringify(newReading)}`);
     response.redirect("/station/" + station._id);
   },
 
@@ -65,6 +67,7 @@ export const stationController = {
     const stationId = request.params.id;
     const readingId = request.params.readingid;
     await readingStore.deleteReading(readingId);
+    console.log(`delete reading ${readingId}`);
     response.redirect("/station/" + stationId);
   },
 
@@ -82,6 +85,7 @@ export const stationController = {
 
     // Attach reading and redirect back to Station ID
     await readingStore.addReading(station._id, newReading);
+    console.log(`add auto reading ${JSON.stringify(newReading)}`);
     response.redirect("/station/" + station._id);
   },
 };
