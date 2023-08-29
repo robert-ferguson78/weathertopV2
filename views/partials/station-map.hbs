@@ -4,6 +4,22 @@
 </div>
 
 <script>
+// set up deafault size
+const size = 20;
+// set up defaulyt icon options
+let LeafIcon = L.Icon.extend({
+    options: {
+        iconSize: [45, 45],
+        iconAnchor: [size/2, size*2]
+    }
+});
+  {{#each stations}}
+  {{#if (greaterOrEqual displayReadings 1)}}
+    a{{latestCode}} = new LeafIcon({iconUrl: '{{latestWeatherIconFilled}}.svg'});
+  {{else}}
+    station = new LeafIcon({iconUrl: 'https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/map-pin-solid-shadow.svg'});
+  {{/if}}
+  {{/each}}
   // Initializes map
   const map = L.map('map'); 
 
@@ -21,12 +37,20 @@
 
   let marker, circle, zoomed;
 
+  L.icon = function (options) {
+    return new L.Icon(options);
+};
 
   // Sets average lat and lng to 0
   let avgLat = avgLng = 0;
   // Iterates through stations and adds markers to map
   {{#each stations}}
-    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}"});
+  {{#if (greaterOrEqual displayReadings 1)}}
+    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}", icon: eval(a{{latestCode}})});
+  {{else}}
+    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}", icon: station});
+  {{/if}}
+     console.log("{{latestCode}}");
      // If there are readigns display all icons and data
       {{#if (greaterOrEqual displayReadings 1)}}
       marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{stationName}}</strong></span>" 
