@@ -85,5 +85,13 @@ let LeafIcon = L.Icon.extend({
   map.setView([avgLat, avgLng], 6);
   map.doubleClickZoom.disable();
   // Adds locate control to map
-  L.control.locate().addTo(map);
+  // L.control.locate().addTo(map);
+
+  // ev is an event object (MouseEvent in this case)
+  map.on('dblclick', function(ev) {
+    let latMaDbClick = ev.latlng.lat.toFixed(8);
+    let lngMaDbClick = ev.latlng.lng.toFixed(8);
+    document.getElementById('latitude').value = latMaDbClick;
+    document.getElementById('longitude').value = lngMaDbClick;
+});
 </script>
