@@ -20,6 +20,7 @@ export const lastReadings = async (id) => {
     reading.latestCode = stationReadings[lastReading].code;
     reading.latestWeatherDescription = conversions.weatherDescription(reading.latestCode);
     reading.latestWeatherIcon = conversions.weatherIcon(reading.latestCode);
+    reading.latestWeatherIconFilled = conversions.weatherIconFilled(reading.latestCode);
     reading.latestTempC = stationReadings[lastReading].temperature;
     reading.latestWindSpeedNumber = stationReadings[lastReading].windSpeed;
     reading.latestWindSpeed = conversions.kmToBf(stationReadings[lastReading].windSpeed);
