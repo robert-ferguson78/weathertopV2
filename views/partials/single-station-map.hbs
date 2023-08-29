@@ -42,14 +42,14 @@ let LeafIcon = L.Icon.extend({
   // Sets average lat and lng to 0
   let avgLat = avgLng = 0;
   {{#if (greaterOrEqual displayReadings 1)}}
-    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}", icon: eval(a{{latestCode}})});
+    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{title}}", icon: eval(a{{latestCode}})});
   {{else}}
-    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{stationName}}", icon: station});
+    marker = L.marker([{{latitude}}, {{longitude}}], {title: "{{title}}", icon: station});
   {{/if}}
      console.log("{{latestCode}}");
      // If there are readigns display all icons and data
       {{#if (greaterOrEqual displayReadings 1)}}
-      marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{stationName}}</strong></span>" 
+      marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{title}}</strong></span>" 
                 + "<span class='popup-stats-ctn'>"
                 + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/compass.svg'> {{latitude}}," + " {{longitude}}"
                 + "</span><span class='popup-stats-ctn'>"
@@ -61,7 +61,7 @@ let LeafIcon = L.Icon.extend({
                 + "</span>"
                 );
       {{else}}
-      marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{stationName}}</strong></span>" 
+      marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{title}}</strong></span>" 
                 + "<span class='popup-stats-ctn'>"
                 + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/compass.svg'> {{latitude}}," + " {{longitude}}"
                 + "</span>"
