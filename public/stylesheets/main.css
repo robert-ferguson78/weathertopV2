@@ -134,43 +134,51 @@ iframe {
 .leaflet-popup-tip {
     background-color: #083643;
     color: #ffffff;
-  }
-  .leaflet-popup-content-wrapper strong {
+}
+.leaflet-popup-content-wrapper strong {
     color: #083643;
     font-size: 18px;
-  }
-  .leaflet-popup-content-wrapper a {
+}
+.leaflet-popup-content-wrapper a {
     background-color: #009e86;
     color: #ffffff;
     padding: 5px 7px;
     border-radius: 3px;
-  }
-  .popup-stats-ctn {
+}
+.popup-stats-ctn {
     display: block;
     display: flex;
     align-items: center;
     margin-top: -5px;
-  }
-  .popup-stats-ctn.title {
+}
+.popup-stats-ctn.title {
     background-color: #ffffff;
     padding: 5px 3px;
     display: block;
     text-align: center;
     margin: 7px auto;
     border-radius: 5px;
-  }
-  .popup-stats-ctn.btn {
+}
+.popup-stats-ctn.btn {
     margin: 7px auto;
     justify-content: center;
-  }
-  .popup-stats-ctn img {
+}
+.popup-stats-ctn img {
     max-height:35px;
-  }
-  .leaflet-container a.leaflet-popup-close-button,
-  .leaflet-container a.leaflet-popup-close-button:hover, 
-  .leaflet-container a.leaflet-popup-close-button:focus {
+}
+.leaflet-container a.leaflet-popup-close-button,
+.leaflet-container a.leaflet-popup-close-button:hover, 
+.leaflet-container a.leaflet-popup-close-button:focus {
     color: #ffffff;
-  }
+}
+
+img.leaflet-marker-icon {
+    background-color: rgba(000,000,000,.4);
+    border-radius: 100%;
+}
+.leaflet-marker-pane img[src^="https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/map-pin-solid-shadow.svg"] {
+    background-color:rgba(000,000,000,.0)
+}
 
 /* reference to this table responsive code is here https://medium.com/allenhwkim/mobile-friendly-table-b0cb066dbc0e */
 @media screen and (max-width: 600px) {
