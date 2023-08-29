@@ -1,59 +1,60 @@
+// Icons, description for readings
 const weatherConditions = new Map();
-    weatherConditions.set(804, { description: "overcast clouds: 85-100%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloudy" });
-    weatherConditions.set(803, { description: "broken clouds: 51-84%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/partly-cloudy-day" });
-    weatherConditions.set(802, { description: "scattered clouds: 25-50%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloud-up" });
-    weatherConditions.set(801, { description: "few clouds: 11-25%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloud-up" });
-    weatherConditions.set(800, { description: "clear sky", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/clear-day" });
-    weatherConditions.set(781, { description: "tornado", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/tornado" });
-    weatherConditions.set(771, { description: "squalls", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-alert" });
-    weatherConditions.set(762, { description: "volcanic ash", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/dust-wind" });
-    weatherConditions.set(761, { description: "dust", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/dust" });
-    weatherConditions.set(751, { description: "sand", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/pollen" });
-    weatherConditions.set(741, { description: "fog", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/fog" });
-    weatherConditions.set(731, { description: "sand/dust whirls", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/hurricane" });
-    weatherConditions.set(721, { description: "haze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/haze" });
-    weatherConditions.set(711, { description: "smoke", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/smoke" });
-    weatherConditions.set(701, { description: "mist", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/mist" });
-    weatherConditions.set(622, { description: "heavy shower snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-snow" });
-    weatherConditions.set(621, { description: "shower snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow" });
-    weatherConditions.set(620, { description: "light shower snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow" });
-    weatherConditions.set(616, { description: "rain and snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snowflake" });
-    weatherConditions.set(615, { description: "light rain and snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-sleet" });
-    weatherConditions.set(613, { description: "shower sleet", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/sleet" });
-    weatherConditions.set(612, { description: "light shower sleet", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/sleet" });
-    weatherConditions.set(611, { description: "sleet", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/sleet" });
-    weatherConditions.set(602, { description: "heavy snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snowflake" });
-    weatherConditions.set(601, { description: "snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow" });
-    weatherConditions.set(600, { description: "light snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow" });
-    weatherConditions.set(531, { description: "ragged shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/raindrops" });
-    weatherConditions.set(522, { description: "heavy intensity shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
-    weatherConditions.set(521, { description: "shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/rain" });
-    weatherConditions.set(520, { description: "light intensity shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
-    weatherConditions.set(511, { description: "freezing rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/overcast-hail" });
-    weatherConditions.set(504, { description: "extreme rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
-    weatherConditions.set(503, { description: "very heavy rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
-    weatherConditions.set(502, { description: "heavy intensity rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
-    weatherConditions.set(501, { description: "moderate rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/rain" });
-    weatherConditions.set(500, { description: "light rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
-    weatherConditions.set(321, { description: "shower drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
-    weatherConditions.set(314, { description: "heavy shower rain and drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
-    weatherConditions.set(313, { description: "shower rain and drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain" });
-    weatherConditions.set(312, { description: "heavy intensity drizzle rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-drizzle" });
-    weatherConditions.set(311, { description: "drizzle rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
-    weatherConditions.set(310, { description: "light intensity drizzle rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-drizzle" });
-    weatherConditions.set(302, { description: "heavy intensity drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-drizzle" });
-    weatherConditions.set(301, { description: "drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
-    weatherConditions.set(300, { description: "light intensity drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle" });
-    weatherConditions.set(232, { description: "thunderstorm with heavy drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-extreme-rain" });
-    weatherConditions.set(231, { description: "thunderstorm with drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain" });
-    weatherConditions.set(230, { description: "thunderstorm with light drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain" });
-    weatherConditions.set(221, { description: "ragged thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms" });
-    weatherConditions.set(212, { description: "heavy thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-extreme" });
-    weatherConditions.set(211, { description: "thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms" });
-    weatherConditions.set(210, { description: "light thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms" });
-    weatherConditions.set(202, { description: "thunderstorm with heavy rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-night-extreme-rain" });
-    weatherConditions.set(201, { description: "thunderstorm with rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain" });
-    weatherConditions.set(200, { description: "thunderstorm with light rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain" });
+    weatherConditions.set(804, { description: "overcast clouds: 85-100%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloudy", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-cloudy" });
+    weatherConditions.set(803, { description: "broken clouds: 51-84%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/partly-cloudy-day", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-partly-cloudy-day" });
+    weatherConditions.set(802, { description: "scattered clouds: 25-50%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloud-up", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-cloud-up" });
+    weatherConditions.set(801, { description: "few clouds: 11-25%", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/cloud-up", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-cloud-up" });
+    weatherConditions.set(800, { description: "clear sky", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/clear-day", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-clear-day" });
+    weatherConditions.set(781, { description: "tornado", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/tornado", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-tornado" });
+    weatherConditions.set(771, { description: "squalls", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-alert", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-wind-alert" });
+    weatherConditions.set(762, { description: "volcanic ash", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/dust-wind", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-dust-wind" });
+    weatherConditions.set(761, { description: "dust", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/dust", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-dust" });
+    weatherConditions.set(751, { description: "sand", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/pollen", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-pollen" });
+    weatherConditions.set(741, { description: "fog", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/fog", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-fog" });
+    weatherConditions.set(731, { description: "sand/dust whirls", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/hurricane", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-hurricane" });
+    weatherConditions.set(721, { description: "haze", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/haze", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-haze" });
+    weatherConditions.set(711, { description: "smoke", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/smoke", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-smoke" });
+    weatherConditions.set(701, { description: "mist", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/mist", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-mist" });
+    weatherConditions.set(622, { description: "heavy shower snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-snow", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-day-snow" });
+    weatherConditions.set(621, { description: "shower snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-snow" });
+    weatherConditions.set(620, { description: "light shower snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-snow" });
+    weatherConditions.set(616, { description: "rain and snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snowflake", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-snowflake" });
+    weatherConditions.set(615, { description: "light rain and snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-sleet", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-sleet" });
+    weatherConditions.set(613, { description: "shower sleet", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/sleet", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-sleet" });
+    weatherConditions.set(612, { description: "light shower sleet", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/sleet", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-sleet" });
+    weatherConditions.set(611, { description: "sleet", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/sleet", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847filled-sleet" });
+    weatherConditions.set(602, { description: "heavy snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snowflake", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-snowflake" });
+    weatherConditions.set(601, { description: "snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-snow" });
+    weatherConditions.set(600, { description: "light snow", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/snow", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-snow" });
+    weatherConditions.set(531, { description: "ragged shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/raindrops", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-raindrops" });
+    weatherConditions.set(522, { description: "heavy intensity shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-rain" });
+    weatherConditions.set(521, { description: "shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-rain" });
+    weatherConditions.set(520, { description: "light intensity shower rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-drizzle" });
+    weatherConditions.set(511, { description: "freezing rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/overcast-hail", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-overcast-hail" });
+    weatherConditions.set(504, { description: "extreme rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-rain" });
+    weatherConditions.set(503, { description: "very heavy rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-rain" });
+    weatherConditions.set(502, { description: "heavy intensity rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-rain" });
+    weatherConditions.set(501, { description: "moderate rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-rain" });
+    weatherConditions.set(500, { description: "light rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-drizzle" });
+    weatherConditions.set(321, { description: "shower drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-drizzle" });
+    weatherConditions.set(314, { description: "heavy shower rain and drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-rain" });
+    weatherConditions.set(313, { description: "shower rain and drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-rain" });
+    weatherConditions.set(312, { description: "heavy intensity drizzle rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-day-drizzle" });
+    weatherConditions.set(311, { description: "drizzle rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-drizzle" });
+    weatherConditions.set(310, { description: "light intensity drizzle rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-day-drizzle" });
+    weatherConditions.set(302, { description: "heavy intensity drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/extreme-day-drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-extreme-day-drizzle" });
+    weatherConditions.set(301, { description: "drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-drizzle" });
+    weatherConditions.set(300, { description: "light intensity drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/drizzle", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-drizzle" });
+    weatherConditions.set(232, { description: "thunderstorm with heavy drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-extreme-rain" });
+    weatherConditions.set(231, { description: "thunderstorm with drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-rain" });
+    weatherConditions.set(230, { description: "thunderstorm with light drizzle", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-rain" });
+    weatherConditions.set(221, { description: "ragged thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms" });
+    weatherConditions.set(212, { description: "heavy thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-extreme", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-extreme" });
+    weatherConditions.set(211, { description: "thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms" });
+    weatherConditions.set(210, { description: "light thunderstorm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms" });
+    weatherConditions.set(202, { description: "thunderstorm with heavy rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-night-extreme-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-night-extreme-rain" });
+    weatherConditions.set(201, { description: "thunderstorm with rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-rain" });
+    weatherConditions.set(200, { description: "thunderstorm with light rain", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/thunderstorms-rain", filled: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/filled-thunderstorms-rain" });
 
 const WindSpeed = new Map();
     WindSpeed.set(0, { description: "Calm", icon: "https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/wind-beaufort-0" });
@@ -111,6 +112,10 @@ export const conversions = {
     
       weatherIcon(code) {
         return weatherConditions.get(code).icon;
+      },
+
+      weatherIconFilled(code) {
+        return weatherConditions.get(code).filled;
       },
 
       windSpeedDescription(code) {
