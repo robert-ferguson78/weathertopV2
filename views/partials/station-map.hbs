@@ -84,8 +84,6 @@ let LeafIcon = L.Icon.extend({
   // Sets map view to average lat and lng
   map.setView([avgLat, avgLng], 6);
   map.doubleClickZoom.disable();
-  // Adds locate control to map
-  // L.control.locate().addTo(map);
 
   // ev is an event object (MouseEvent in this case)
   map.on('dblclick', function(ev) {
