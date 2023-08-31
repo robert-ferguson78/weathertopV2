@@ -21,31 +21,31 @@ This is WeatherTop Release 4 of the joint assignment of Web & Programming in Jav
 
 1. Initial values are read in from JSON file
    a. Station 
-    1. Name 
-    2. Latitude 
-    3. Longitude 
-    4. attached readings
+        1. Name 
+        2. Latitude 
+        3. Longitude 
+        4. attached readings
    b. Station Readings 
-    1. Date 
-    2. Code 
-    3. Temperature 
-    4. WindSpeed 
-    5. WindDirection 
-    6. Pressure
+        1. Date 
+        2. Code 
+        3. Temperature 
+        4. WindSpeed 
+        5. WindDirection 
+        6. Pressure
    c. Member/User 
-   1. Email 
-   2. First Name 
-   3. Last Name 
-   4. Password 
-   5. Stations
+        1. Email 
+        2. First Name 
+        3. Last Name 
+        4. Password 
+        5. Stations
 2. User visits site and has option to login or Signup/Register.
 3. Users Readings are displayed which contain
-   a. Date of reading created
-   b. Weather Code
-   c. Temperature
-   d. WindSpeed
-   e. WindDirection
-   f. Pressure
+    a. Date of reading created
+    b. Weather Code
+    c. Temperature
+    d. WindSpeed
+    e. WindDirection
+    f. Pressure
 4. Temperature is converted and displayed in both C & F.
 5. WindSpeed is converted in Beaufort scale to user, and also accompanied by text description of Beaufort number.
 6. WindDirection is converted from 0-360 value range to compass direction eg:"North East".
