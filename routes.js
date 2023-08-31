@@ -1,6 +1,6 @@
 import express from "express";
 
-// Middleware for user and user logged in checks
+// Middleware for user, user logged in, error and messages
 import { attachUser } from "./middleware/attach-user.js";
 import { checkUserAuth } from "./middleware/check-user-auth.js";
 import { error404 } from "./middleware/error404.js";
@@ -18,7 +18,7 @@ export const router = express.Router();
 // Let the user be available in routes
 router.use(attachUser);
 
-// User messages
+// User messages be available in routes
 router.use(message);
 
 // Set up public accessible routes
