@@ -20,19 +20,19 @@ This is WeatherTop Release 4 of the joint assignment of Web & Programming in Jav
 # Features that have been implemented from the assignment brief
 
 1. Initial values are read in from JSON file
-   a. Station 
+   - Station 
         1. Name 
         2. Latitude 
         3. Longitude 
         4. attached readings
-   b. Station Readings 
+   - Station Readings 
         1. Date 
         2. Code 
         3. Temperature 
         4. WindSpeed 
         5. WindDirection 
         6. Pressure
-   c. Member/User 
+   - Member/User 
         1. Email 
         2. First Name 
         3. Last Name 
@@ -40,12 +40,12 @@ This is WeatherTop Release 4 of the joint assignment of Web & Programming in Jav
         5. Stations
 2. User visits site and has option to login or Signup/Register.
 3. Users Readings are displayed which contain
-    a. Date of reading created
-    b. Weather Code
-    c. Temperature
-    d. WindSpeed
-    e. WindDirection
-    f. Pressure
+    - Date of reading created
+    - Weather Code
+    - Temperature
+    - WindSpeed
+    - WindDirection
+    - Pressure
 4. Temperature is converted and displayed in both C & F.
 5. WindSpeed is converted in Beaufort scale to user, and also accompanied by text description of Beaufort number.
 6. WindDirection is converted from 0-360 value range to compass direction eg:"North East".
@@ -58,28 +58,28 @@ This is WeatherTop Release 4 of the joint assignment of Web & Programming in Jav
 13. Stations listed in alphabetical order in Station-list/Dashboard view
 14. Seperated Station and Reading views.
 15. Latest readings has Weather icons assigned
-    a. Location
-    b. Weather Code
-    c. Temperature
-    d. Wind
-    e. Pressure
+    - Location
+    - Weather Code
+    - Temperature
+    - Wind
+    - Pressure
 16. Min and Max values are displayed for
-    a. Temperature
-    b. Wind
-    c. Pressure
+    - Temperature
+    - Wind
+    - Pressure
 17. Trends are displayed for Temperature, Wind, Pressure with icons and text for values Falling, Stable and Rising based on last 3 readings from user.
 18. Trend graphs are also diplsyed with 8 day forcase.
 19. Member/User profile page to display user details including
-    a. Email
-    b. First Name
-    c. Last Name
-    d. Password "password is hidden with \*\*\*"
-    e. Confirm password
+    - Email
+    - First Name
+    - Last Name
+    - Password "password is hidden with \*\*\*"
+    - Confirm password
 20. Ability to update users profile for
-    a. First Name
-    b. Last Name
-    c. Password (must match confirm password field to save)
-    d. But email is unique identifier for account and can not be changed "this is by design"
+    - First Name
+    - Last Name
+    - Password (must match confirm password field to save)
+    - But email is unique identifier for account and can not be changed "this is by design"
 
 # Additional Features that have been implemented
 
