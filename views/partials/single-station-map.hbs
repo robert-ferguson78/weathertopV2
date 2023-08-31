@@ -58,11 +58,21 @@ let LeafIcon = L.Icon.extend({
                 + "</span><span class='popup-stats-ctn'>"
                 + "<img src='{{latestWindSpeedIcon}}.svg'> {{latestWindSpeed}} bft" + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/barometer.svg'> {{latestPressure}} hPa"
                 + "</span>"
+                + "<span class='popup-stats-ctn btn'>"
+                + "<form class='m-0' action='/station/{{station._id}}/autoreading' method='post'>"
+                + "<button class='button is-fullwidth is-info has-text-weight-bold'>Auto Generate Reading</button>"
+                + "</form>"
+                + "</span>"
                 );
       {{else}}
       marker.bindPopup("<span class='popup-stats-ctn title'><strong>{{title}}</strong></span>" 
                 + "<span class='popup-stats-ctn'>"
                 + "<img src='https://cdn.glitch.global/80ce3e4b-d8a6-4fd5-8cd5-7803d57b6847/compass.svg'> {{latitude}}," + " {{longitude}}"
+                + "</span>"
+                + "<span class='popup-stats-ctn btn'>"
+                + "<form class='m-0' action='/station/{{station._id}}/autoreading' method='post'>"
+                + "<button class='button is-fullwidth is-info has-text-weight-bold'>Auto Generate Reading</button>"
+                + "</form>"
                 + "</span>"
                 );
       {{/if}}
