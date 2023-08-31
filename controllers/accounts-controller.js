@@ -56,7 +56,7 @@ export const accountsController = {
     lastName: request.body.lastName,
     password: request.body.password
   };
-    console.log(`${JSON.stringify(userId._id)}`);
+console.log(`${JSON.stringify(userId._id)}`);
     await userStore.updateUser(userId._id, newUser);
     response.cookie("message_success", "Profile Updated Successfully");
     response.redirect("/profile");
@@ -67,7 +67,7 @@ export const accountsController = {
     const loggedInUser = request.user._id;
     const userId = await userStore.getUserById(loggedInUser);
       await userStore.deleteUserById(userId);
-      console.log(`deleted profile ${userId}`);
+console.log(`deleted profile ${userId}`);
       response.redirect("/");
   },
 
@@ -80,6 +80,7 @@ export const accountsController = {
       password: request.body.password
     };
     const existingUser = await userStore.getUserByEmail(request.body.email.toLowerCase());
+    // check if email is already registered and return error else add user
     if (existingUser) {
       response.cookie('message_error', 'This Email Is Already Registered.');
       response.redirect("/signup");
@@ -93,8 +94,10 @@ export const accountsController = {
   // Authenticate user by setting cookie or redirect to login page
   async authenticate(request, response) {
     const user = await userStore.getUserByEmail(request.body.email.toLowerCase());
+    // if there is a user get the connected password to check else return error
     if (user) {
       const userPass = user.password;
+      // if password is correct login else return error
       if (request.body.password === userPass) {
         response.cookie("userAuth", user.email);
         console.log(`logging in ${user.email}`);

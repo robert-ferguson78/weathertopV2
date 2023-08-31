@@ -39,14 +39,10 @@ export const readingStore = {
   async deleteStationReadings(id) {
      console.log("station delete log", id);
     await db.read();
+    // loop through readings with id array and filter out the readings to be removed
     for (let i=0; i < id.length; i++ ) {
       db.data.readings = db.data.readings.filter(reading => reading.stationid !== id);
-      // console.log(db.data.readings);
-      // console.log(id[i]);
     };
-    // db.data.readings = db.data.readings.filter(reading => reading.stationid !== id);
-    // console.log(`${JSON.stringify(db.data.readings)}`);
-    // console.log("station delete log");
     console.log(db.data.readings);
     await db.write();
   },

@@ -21,6 +21,7 @@ export const stationStore = {
   async getStationsByUserId(userid) {
     await db.read();
     let stationsSort = db.data.stations.filter((station) => station.userid === userid);
+    // sort stations alphbetically
     stationsSort.sort((a, b) => (a.stationName > b.stationName ? 1 : -1));
     return stationsSort;
   },
@@ -46,12 +47,14 @@ export const stationStore = {
   async deleteStationsById(stationId) {
     await db.read();
     let stationRemoveList = db.data.stations.filter((station) => station.userid === stationId._id);
-    // console.log(`${JSON.stringify(stationTest)}`);
+    // Create array from the Station to remove list variable
     stationRemoveList = Array.from(stationRemoveList);
     let stationIdsToRemove = [];
+    // For loop to crate an array of id's to remove
     for (let i=0; i < stationRemoveList.length; i++ ) {
       stationIdsToRemove[i] = stationRemoveList[i]._id;
     };
+    // pass in array of station id's to reomve connected readings
     await readingStore.deleteStationReadings(stationIdsToRemove);
     db.data.stations = db.data.stations.filter((station) => station.userid !== stationId._id);
     await db.write();

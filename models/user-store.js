@@ -24,12 +24,11 @@ export const userStore = {
   },
 
   async updateUser(userId, updatedUser)  {
-    // console.log(`${JSON.stringify(userId), ' some text'}`);
     const user = await this.getUserById(userId);
     user.firstName = updatedUser.firstName;
     user.lastName = updatedUser.lastName;
     user.password = updatedUser.password;
-    // console.log(`${JSON.stringify(updatedUser)}`);
+    console.log(`${JSON.stringify(updatedUser)}`);
     await db.write();
   },
 
@@ -42,6 +41,7 @@ export const userStore = {
     await db.read();
     const index = db.data.users.findIndex((user) => user._id === id);
     db.data.users.splice(index, 1);
+    // pass in user id to delete stations attached to user
     await stationStore.deleteStationsById(id);
     await db.write();
   },
