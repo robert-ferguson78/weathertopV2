@@ -93,14 +93,20 @@ export const accountsController = {
   // Authenticate user by setting cookie or redirect to login page
   async authenticate(request, response) {
     const user = await userStore.getUserByEmail(request.body.email.toLowerCase());
-    const userPass = user.password;
-    if (user && request.body.password === userPass) {
-      response.cookie("userAuth", user.email);
-      console.log(`logging in ${user.email}`);
-      response.redirect("/dashboard");
+    if (user) {
+      const userPass = user.password;
+      if (request.body.password === userPass) {
+        response.cookie("userAuth", user.email);
+        console.log(`logging in ${user.email}`);
+        response.redirect("/dashboard");
+      } else {
+        response.cookie('message_error', 'Login Failed, Incorrect Credentials');
+        console.log(`not logged in, redirected to login page`);
+        response.redirect("/login");
+      }
     } else {
       response.cookie('message_error', 'Login Failed, Incorrect Credentials');
-      console.log(`not logged in, redirected to login page`);
+      console.log(`email not found, redirected to login page`);
       response.redirect("/login");
     }
   },
