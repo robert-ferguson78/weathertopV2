@@ -1,4 +1,8 @@
 {{> menu active="dashboard"}}
-  {{> station-map}}
+{{#if stations}}
+    {{> station-map}}
+  {{else}}
+    {{> empty-map}}
+{{/if}}
   {{> add-station}}
   {{> list-stations}}
