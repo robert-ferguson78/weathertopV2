@@ -1,9 +1,9 @@
 # weathertopV2
 
-Student Name : Robert Ferguson
-Student Number : 20104121
-Github URL : https://github.com/robert-ferguson78/weathertopV2
-Deployed URL : https://robert-f-weathertopv2.glitch.me/
+- Student Name : Robert Ferguson
+- Student Number : 20104121
+- Github URL : https://github.com/robert-ferguson78/weathertopV2
+- Deployed URL : https://robert-f-weathertopv2.glitch.me/
 
 # Release Version
 
