@@ -103,7 +103,7 @@ This is WeatherTop Release 4 of the joint assignment of Web & Programming in Jav
 
 # Technology Used
 
-**Javascript** (Vanilla Javascript used in site for models and form fields)
+**Javascript** (Used in site for models and form fields)
 Technology Description: JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.
 
 **Iframe** (Pull in weather widget map from https://www.windy.com)
